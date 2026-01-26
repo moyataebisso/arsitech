@@ -28,17 +28,26 @@ export default function ContactForm() {
     contactPreference: "either",
   });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setStatus("loading");
+    setErrorMessage("");
 
     try {
-      // For now, log to console - ready for Supabase integration
-      console.log("Form submission:", formData);
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-      // Simulate API call
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      if (!response.ok) {
+        const data = await response.json();
+        throw new Error(data.error || "Failed to send message");
+      }
 
       setStatus("success");
       setFormData({
@@ -52,8 +61,9 @@ export default function ContactForm() {
         message: "",
         contactPreference: "either",
       });
-    } catch {
+    } catch (error) {
       setStatus("error");
+      setErrorMessage(error instanceof Error ? error.message : "Something went wrong");
     }
   };
 
@@ -66,7 +76,7 @@ export default function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="bg-success/10 border border-success rounded-2xl p-8 text-center">
+      <div className="bg-success/20 border border-success rounded-2xl p-8 text-center">
         <svg
           className="h-16 w-16 text-success mx-auto mb-4"
           fill="none"
@@ -80,13 +90,13 @@ export default function ContactForm() {
             d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
           />
         </svg>
-        <h3 className="text-2xl font-bold text-primary mb-2">Message Sent!</h3>
-        <p className="text-text-light mb-6">
-          Thanks! We&apos;ll be in touch within 24 hours.
+        <h3 className="text-2xl font-bold text-white mb-2">Message Sent!</h3>
+        <p className="text-gray-300 mb-6">
+          Thanks! We&apos;ll be in touch within 24 hours. Check your email for a confirmation.
         </p>
         <button
           onClick={() => setStatus("idle")}
-          className="text-accent hover:text-accent-dark font-medium transition-colors"
+          className="text-accent hover:text-cyan font-medium transition-colors"
         >
           Send another message
         </button>
@@ -94,12 +104,16 @@ export default function ContactForm() {
     );
   }
 
+  const inputClasses = "w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:border-accent focus:ring-2 focus:ring-accent/20 transition-colors";
+  const selectClasses = "w-full px-4 py-3 rounded-lg bg-white/10 border border-white/20 text-white focus:border-accent focus:ring-2 focus:ring-accent/20 transition-colors [&>option]:bg-primary [&>option]:text-white";
+  const labelClasses = "block text-sm font-medium text-gray-200 mb-2";
+
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
       {/* Name Fields */}
       <div className="grid md:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="firstName" className="block text-sm font-medium text-text-dark mb-2">
+          <label htmlFor="firstName" className={labelClasses}>
             First Name <span className="text-error">*</span>
           </label>
           <input
@@ -109,12 +123,12 @@ export default function ContactForm() {
             required
             value={formData.firstName}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 transition-colors"
+            className={inputClasses}
             placeholder="First name"
           />
         </div>
         <div>
-          <label htmlFor="lastName" className="block text-sm font-medium text-text-dark mb-2">
+          <label htmlFor="lastName" className={labelClasses}>
             Last Name <span className="text-error">*</span>
           </label>
           <input
@@ -124,7 +138,7 @@ export default function ContactForm() {
             required
             value={formData.lastName}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 transition-colors"
+            className={inputClasses}
             placeholder="Last name"
           />
         </div>
@@ -133,7 +147,7 @@ export default function ContactForm() {
       {/* Contact Fields */}
       <div className="grid md:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-text-dark mb-2">
+          <label htmlFor="email" className={labelClasses}>
             Email <span className="text-error">*</span>
           </label>
           <input
@@ -143,12 +157,12 @@ export default function ContactForm() {
             required
             value={formData.email}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 transition-colors"
-            placeholder="you@practice.com"
+            className={inputClasses}
+            placeholder="you@company.com"
           />
         </div>
         <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-text-dark mb-2">
+          <label htmlFor="phone" className={labelClasses}>
             Phone
           </label>
           <input
@@ -157,7 +171,7 @@ export default function ContactForm() {
             name="phone"
             value={formData.phone}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 transition-colors"
+            className={inputClasses}
             placeholder="(555) 123-4567"
           />
         </div>
@@ -166,7 +180,7 @@ export default function ContactForm() {
       {/* Business Fields */}
       <div className="grid md:grid-cols-2 gap-6">
         <div>
-          <label htmlFor="businessName" className="block text-sm font-medium text-text-dark mb-2">
+          <label htmlFor="businessName" className={labelClasses}>
             Business Name <span className="text-error">*</span>
           </label>
           <input
@@ -176,12 +190,12 @@ export default function ContactForm() {
             required
             value={formData.businessName}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 transition-colors"
-            placeholder="Your practice name"
+            className={inputClasses}
+            placeholder="Your company name"
           />
         </div>
         <div>
-          <label htmlFor="businessType" className="block text-sm font-medium text-text-dark mb-2">
+          <label htmlFor="businessType" className={labelClasses}>
             Business Type
           </label>
           <select
@@ -189,7 +203,7 @@ export default function ContactForm() {
             name="businessType"
             value={formData.businessType}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 transition-colors bg-white"
+            className={selectClasses}
           >
             <option value="">Select type...</option>
             {BUSINESS_TYPES.map((type) => (
@@ -203,7 +217,7 @@ export default function ContactForm() {
 
       {/* Service Interest */}
       <div>
-        <label htmlFor="serviceInterest" className="block text-sm font-medium text-text-dark mb-2">
+        <label htmlFor="serviceInterest" className={labelClasses}>
           How can we help?
         </label>
         <select
@@ -211,7 +225,7 @@ export default function ContactForm() {
           name="serviceInterest"
           value={formData.serviceInterest}
           onChange={handleChange}
-          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 transition-colors bg-white"
+          className={selectClasses}
         >
           <option value="">Select a service...</option>
           {SERVICE_INTERESTS.map((service) => (
@@ -224,7 +238,7 @@ export default function ContactForm() {
 
       {/* Message */}
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-text-dark mb-2">
+        <label htmlFor="message" className={labelClasses}>
           Message
         </label>
         <textarea
@@ -233,14 +247,14 @@ export default function ContactForm() {
           rows={4}
           value={formData.message}
           onChange={handleChange}
-          className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-accent focus:ring-2 focus:ring-accent/20 transition-colors resize-none"
-          placeholder="Tell us about your practice and compliance needs..."
+          className={`${inputClasses} resize-none`}
+          placeholder="Tell us about your project or technology needs..."
         />
       </div>
 
       {/* Contact Preference */}
       <div>
-        <label className="block text-sm font-medium text-text-dark mb-3">
+        <label className={labelClasses}>
           Preferred contact method
         </label>
         <div className="flex flex-wrap gap-4">
@@ -251,7 +265,7 @@ export default function ContactForm() {
           ].map((option) => (
             <label
               key={option.value}
-              className="inline-flex items-center cursor-pointer"
+              className="inline-flex items-center cursor-pointer group"
             >
               <input
                 type="radio"
@@ -259,9 +273,9 @@ export default function ContactForm() {
                 value={option.value}
                 checked={formData.contactPreference === option.value}
                 onChange={handleChange}
-                className="w-4 h-4 text-accent border-gray-300 focus:ring-accent"
+                className="w-4 h-4 text-accent bg-white/10 border-white/20 focus:ring-accent"
               />
-              <span className="ml-2 text-text-dark">{option.label}</span>
+              <span className="ml-2 text-gray-200 group-hover:text-white transition-colors">{option.label}</span>
             </label>
           ))}
         </div>
@@ -269,8 +283,8 @@ export default function ContactForm() {
 
       {/* Error Message */}
       {status === "error" && (
-        <div className="bg-error/10 border border-error rounded-lg p-4 text-error">
-          Something went wrong. Please try again or email us directly.
+        <div className="bg-error/20 border border-error rounded-lg p-4 text-error">
+          {errorMessage || "Something went wrong. Please try again or email us directly at arsitechgroup@gmail.com"}
         </div>
       )}
 
@@ -278,7 +292,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="w-full bg-accent hover:bg-accent-dark text-white py-4 rounded-lg font-semibold text-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full bg-accent hover:bg-accent-dark text-white py-4 rounded-lg font-semibold text-lg transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed hover:shadow-lg hover:shadow-accent/30"
       >
         {status === "loading" ? "Sending..." : "Send Message"}
       </button>

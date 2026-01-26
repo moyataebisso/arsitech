@@ -1,12 +1,8 @@
 import HeroSection from "@/components/HeroSection";
-import ProblemSection from "@/components/ProblemSection";
-import ServicesPreview from "@/components/ServicesPreview";
-import ProcessSteps from "@/components/ProcessSteps";
-import StatsSection from "@/components/StatsSection";
-import WhoWeServe from "@/components/WhoWeServe";
-import AboutPreview from "@/components/AboutPreview";
-import FAQSection from "@/components/FAQSection";
-import CTASection from "@/components/CTASection";
+import ProblemServicesSection from "@/components/ProblemServicesSection";
+import ProcessAudienceSection from "@/components/ProcessAudienceSection";
+import TeamCredentialsSection from "@/components/TeamCredentialsSection";
+import FAQCTASection from "@/components/FAQCTASection";
 
 export default function Home() {
   return (
@@ -14,29 +10,17 @@ export default function Home() {
       {/* Hero Section */}
       <HeroSection />
 
-      {/* Problem/Pain Section */}
-      <ProblemSection />
+      {/* Problem + Services Section (Combined) */}
+      <ProblemServicesSection />
 
-      {/* Solution/Services Overview */}
-      <ServicesPreview />
+      {/* Process + Who We Serve Section (Combined) */}
+      <ProcessAudienceSection />
 
-      {/* Process Steps */}
-      <ProcessSteps />
+      {/* Team + Credentials Section (Combined) */}
+      <TeamCredentialsSection />
 
-      {/* Stats/Social Proof Section */}
-      <StatsSection />
-
-      {/* Who We Serve */}
-      <WhoWeServe />
-
-      {/* About Preview */}
-      <AboutPreview />
-
-      {/* FAQ Preview */}
-      <FAQSection />
-
-      {/* Final CTA Section */}
-      <CTASection />
+      {/* FAQ + CTA Section (Combined) */}
+      <FAQCTASection />
     </>
   );
 }

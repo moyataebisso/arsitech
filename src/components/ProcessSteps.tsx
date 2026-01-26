@@ -32,11 +32,12 @@ const steps = [
 
 export default function ProcessSteps() {
   return (
-    <section id="process" className="py-20 bg-off-white relative overflow-hidden">
+    <section id="process" className="py-20 bg-gradient-to-br from-off-white via-success/5 to-cyan/5 relative overflow-hidden">
       {/* Floating decorative elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-1/3 right-10 w-48 h-48 bg-accent/5 rounded-full blur-2xl animate-float-slow" />
-        <div className="absolute bottom-1/3 left-10 w-56 h-56 bg-highlight/5 rounded-full blur-2xl animate-float delay-400" />
+        <div className="absolute top-1/3 right-10 w-56 h-56 bg-accent/10 rounded-full blur-3xl animate-float-slow" />
+        <div className="absolute bottom-1/3 left-10 w-64 h-64 bg-highlight/10 rounded-full blur-3xl animate-float delay-400" />
+        <div className="absolute top-1/2 left-1/3 w-40 h-40 bg-success/5 rounded-full blur-2xl animate-float-fast delay-200" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -63,7 +64,7 @@ export default function ProcessSteps() {
                 delay={index * 150}
               >
                 <div className="relative h-full">
-                  <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group h-full">
+                  <div className="bg-gradient-to-br from-light-accent/50 to-success/10 rounded-2xl p-8 shadow-sm border border-accent/10 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 group h-full backdrop-blur-sm">
                     {/* Step number badge */}
                     <div className="absolute -top-4 left-8">
                       <div className="w-10 h-10 rounded-full bg-accent text-white font-bold flex items-center justify-center shadow-lg shadow-accent/30 group-hover:scale-110 transition-transform animate-pulse-glow">

@@ -1,11 +1,17 @@
 import Link from "next/link";
-import { ShieldCheckIcon } from "@heroicons/react/24/solid";
+import { ShieldCheckIcon, AcademicCapIcon, MapPinIcon } from "@heroicons/react/24/solid";
 import { COMPANY, FOOTER_LINKS } from "@/lib/constants";
 
 export default function Footer() {
   return (
-    <footer className="bg-primary text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <footer className="bg-gradient-to-br from-primary via-secondary to-primary text-white relative overflow-hidden">
+      {/* Floating decorative elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-10 right-10 w-64 h-64 bg-accent/5 rounded-full blur-3xl animate-float-slow" />
+        <div className="absolute bottom-10 left-10 w-48 h-48 bg-cyan/5 rounded-full blur-3xl animate-float delay-300" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand Column */}
           <div className="lg:col-span-1">
@@ -15,9 +21,20 @@ export default function Footer() {
                 ARSI <span className="text-accent">TECHNOLOGY GROUP</span>
               </span>
             </Link>
-            <p className="text-gray-400 text-sm mb-6">
+            <p className="text-gray-400 text-sm mb-4">
               {COMPANY.tagline}
             </p>
+            {/* Founder credentials */}
+            <div className="flex flex-col gap-2 mb-4">
+              <div className="flex items-center gap-2 text-sm">
+                <AcademicCapIcon className="w-4 h-4 text-highlight" />
+                <span className="text-gray-300">M.S. Engineering Led</span>
+              </div>
+              <div className="flex items-center gap-2 text-sm">
+                <MapPinIcon className="w-4 h-4 text-cyan" />
+                <span className="text-gray-300">Minnesota-Based</span>
+              </div>
+            </div>
             <p className="text-gray-500 text-sm">
               &copy; {new Date().getFullYear()} {COMPANY.legalName}
             </p>
@@ -108,11 +125,12 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-white/10">
+      <div className="border-t border-white/10 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-gray-500 text-sm text-center md:text-left">
-              Proudly serving businesses across Minnesota and nationwide
+            <p className="text-gray-400 text-sm text-center md:text-left">
+              <MapPinIcon className="w-4 h-4 inline mr-1 text-highlight" />
+              Proudly serving Minneapolis, St. Paul, and businesses across Minnesota and nationwide
             </p>
             <div className="flex gap-6">
               {FOOTER_LINKS.legal.map((link) => (

@@ -31,13 +31,13 @@ interface FAQItemProps {
 
 function FAQItem({ question, answer, isOpen, onClick }: FAQItemProps) {
   return (
-    <div className="border-b border-gray-200 last:border-b-0">
+    <div className="border-b border-white/10 last:border-b-0">
       <button
         onClick={onClick}
         className="w-full py-6 flex items-center justify-between text-left focus:outline-none group"
         aria-expanded={isOpen}
       >
-        <span className="text-lg font-semibold text-primary group-hover:text-accent transition-colors pr-4">
+        <span className="text-lg font-semibold text-white group-hover:text-accent transition-colors pr-4">
           {question}
         </span>
         <ChevronDownIcon
@@ -51,7 +51,7 @@ function FAQItem({ question, answer, isOpen, onClick }: FAQItemProps) {
           isOpen ? "max-h-96 pb-6" : "max-h-0"
         }`}
       >
-        <p className="text-text-light leading-relaxed">{answer}</p>
+        <p className="text-gray-300 leading-relaxed">{answer}</p>
       </div>
     </div>
   );
@@ -61,20 +61,28 @@ export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 bg-primary bg-grid-pattern relative overflow-hidden">
+      {/* Background gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary via-secondary to-primary opacity-95" />
+
+      {/* Floating decorative elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-20 right-20 w-48 h-48 bg-accent/10 rounded-full blur-3xl animate-float-slow" />
+        <div className="absolute bottom-20 left-20 w-40 h-40 bg-highlight/10 rounded-full blur-3xl animate-float delay-200" />
+      </div>
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         {/* Section header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             Frequently Asked Questions
           </h2>
-          <p className="text-lg text-text-light">
+          <p className="text-lg text-gray-300">
             Common questions about our technology and consulting services
           </p>
         </div>
 
         {/* FAQ list */}
-        <div className="bg-off-white rounded-2xl px-8">
+        <div className="bg-white/10 backdrop-blur-sm rounded-2xl px-8 border border-white/10">
           {faqs.map((faq, index) => (
             <FAQItem
               key={index}

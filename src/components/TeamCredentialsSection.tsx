@@ -12,7 +12,28 @@ const teamCredentials = [
   "Minnesota-Based, Serving Businesses Nationwide",
 ];
 
-export default function AboutPreview() {
+const degrees = [
+  {
+    degree: "M.S. Electrical & Computer Engineering",
+    school: "University of St. Thomas, MN",
+  },
+  {
+    degree: "B.S. Computer Science",
+    school: "University of Minnesota Twin Cities (CSE)",
+  },
+  {
+    degree: "B.A.Sc. IT Infrastructure",
+    school: "University of Minnesota",
+  },
+];
+
+const highlights = [
+  { value: "Fortune 500", label: "Company Experience" },
+  { value: "5+", label: "Years Combined Experience" },
+  { value: "4 Days", label: "HIPAA Compliance" },
+];
+
+export default function TeamCredentialsSection() {
   return (
     <section className="py-20 bg-primary bg-grid-pattern relative overflow-hidden">
       {/* Background gradient overlay */}
@@ -23,10 +44,26 @@ export default function AboutPreview() {
         <div className="absolute top-1/4 right-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl animate-float-slow" />
         <div className="absolute bottom-1/4 left-0 w-56 h-56 bg-highlight/10 rounded-full blur-3xl animate-float delay-200" />
         <div className="absolute top-1/2 left-1/4 w-32 h-32 bg-success/10 rounded-full blur-2xl animate-float-fast" />
+        <div className="absolute top-10 right-1/4 w-40 h-40 bg-cyan/10 rounded-full blur-3xl animate-float-slow" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        {/* Section Header */}
+        <AnimatedSection animation="fade-up" className="text-center mb-12">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-highlight/20 text-highlight mb-4">
+            <AcademicCapIcon className="w-5 h-5 mr-2" />
+            <span className="font-medium">Our Team&apos;s Credentials</span>
+          </div>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
+            Engineering Excellence That Powers Your Solutions
+          </h2>
+          <div className="flex items-center justify-center gap-2 text-gray-300">
+            <MapPinIcon className="w-5 h-5 text-cyan" />
+            <span>Minnesota-Based Expertise</span>
+          </div>
+        </AnimatedSection>
+
+        <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           {/* Team Visual */}
           <AnimatedSection animation="fade-right" className="order-2 lg:order-1">
             <div className="bg-gradient-to-br from-accent via-accent-dark to-cyan rounded-2xl p-8 aspect-square max-w-md mx-auto flex items-center justify-center relative overflow-hidden group hover:shadow-2xl shadow-xl shadow-accent/20 transition-shadow duration-300">
@@ -56,13 +93,6 @@ export default function AboutPreview() {
                 <MapPinIcon className="w-4 h-4 text-highlight mr-1" />
                 <span className="text-highlight text-sm font-medium">Minnesota</span>
               </div>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
-              Engineering Excellence
-            </h2>
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-accent/20 text-accent font-semibold mb-6">
-              <AcademicCapIcon className="w-5 h-5 mr-2" />
-              Advanced Degrees from Top Minnesota Universities
             </div>
             <p className="text-lg text-gray-300 leading-relaxed mb-6">
               Our team brings graduate-level engineering expertise from <strong className="text-white">University of St. Thomas</strong> and <strong className="text-white">University of Minnesota Twin Cities</strong>. With experience at <strong className="text-white">Optum/United Health Group</strong>, <strong className="text-white">Xcel Energy</strong>, and multiple tech startups, we deliver enterprise-level solutions to businesses of all sizes.
@@ -101,6 +131,35 @@ export default function AboutPreview() {
               </svg>
             </Link>
           </AnimatedSection>
+        </div>
+
+        {/* Degrees grid */}
+        <div className="grid md:grid-cols-3 gap-6 mb-12">
+          {degrees.map((cred, index) => (
+            <AnimatedSection key={index} animation="fade-up" delay={index * 150}>
+              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-accent/50 transition-all duration-500 hover:-translate-y-2">
+                <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center mb-4">
+                  <AcademicCapIcon className="w-6 h-6 text-accent" />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-1">{cred.degree}</h3>
+                <p className="text-gray-300 text-sm">{cred.school}</p>
+              </div>
+            </AnimatedSection>
+          ))}
+        </div>
+
+        {/* Highlights */}
+        <div className="grid grid-cols-3 gap-8 pt-8 border-t border-white/10">
+          {highlights.map((stat, index) => (
+            <AnimatedSection key={index} animation="fade-up" delay={(index + 3) * 100}>
+              <div className="text-center">
+                <div className="text-2xl md:text-3xl font-bold text-accent mb-1 stat-number">
+                  {stat.value}
+                </div>
+                <div className="text-gray-400 text-sm">{stat.label}</div>
+              </div>
+            </AnimatedSection>
+          ))}
         </div>
       </div>
     </section>

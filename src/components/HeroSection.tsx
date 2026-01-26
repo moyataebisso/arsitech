@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { CodeBracketIcon, ShieldCheckIcon, ServerStackIcon, CpuChipIcon } from "@heroicons/react/24/solid";
+import { CodeBracketIcon, ShieldCheckIcon, ServerStackIcon, CpuChipIcon, AcademicCapIcon, MapPinIcon } from "@heroicons/react/24/solid";
 
 export default function HeroSection() {
   return (
@@ -44,12 +44,22 @@ export default function HeroSection() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
         <div className="max-w-3xl">
           {/* Trust badges with stagger animation */}
+          <div className="flex flex-wrap gap-3 mb-6">
+            <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-highlight/20 text-highlight text-sm font-medium animate-fade-in-up opacity-0" style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }}>
+              <AcademicCapIcon className="w-4 h-4 mr-2" />
+              M.S. Engineering Expertise
+            </span>
+            <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-cyan/20 text-cyan text-sm font-medium animate-fade-in-up opacity-0" style={{ animationDelay: '0.15s', animationFillMode: 'forwards' }}>
+              <MapPinIcon className="w-4 h-4 mr-2" />
+              Minnesota-Based
+            </span>
+          </div>
           <div className="flex flex-wrap gap-3 mb-8">
-            <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-accent/20 text-accent text-sm font-medium animate-fade-in-up opacity-0" style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }}>
+            <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-accent/20 text-accent text-sm font-medium animate-fade-in-up opacity-0" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
               <CodeBracketIcon className="w-4 h-4 mr-2" />
               Software Development
             </span>
-            <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-highlight/20 text-highlight text-sm font-medium animate-fade-in-up opacity-0" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
+            <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-highlight/20 text-highlight text-sm font-medium animate-fade-in-up opacity-0" style={{ animationDelay: '0.25s', animationFillMode: 'forwards' }}>
               <ServerStackIcon className="w-4 h-4 mr-2" />
               IT Consulting
             </span>
@@ -94,33 +104,33 @@ export default function HeroSection() {
           <div className="mt-12 pt-8 border-t border-white/10 animate-fade-in-up opacity-0" style={{ animationDelay: '0.7s', animationFillMode: 'forwards' }}>
             <div className="flex flex-wrap gap-8 text-gray-400">
               <div className="flex items-center gap-2 hover:text-white transition-colors group cursor-default">
+                <AcademicCapIcon className="w-5 h-5 text-highlight group-hover:animate-bounce-slow" />
+                <span>Fortune 500 Experience</span>
+              </div>
+              <div className="flex items-center gap-2 hover:text-white transition-colors group cursor-default">
                 <ShieldCheckIcon className="w-5 h-5 text-accent group-hover:animate-bounce-slow" />
                 <span>HIPAA Compliance in 4 Days</span>
               </div>
               <div className="flex items-center gap-2 hover:text-white transition-colors group cursor-default">
-                <ServerStackIcon className="w-5 h-5 text-accent group-hover:animate-bounce-slow" />
-                <span>Full IT Support</span>
-              </div>
-              <div className="flex items-center gap-2 hover:text-white transition-colors group cursor-default">
-                <CodeBracketIcon className="w-5 h-5 text-accent group-hover:animate-bounce-slow" />
-                <span>Custom Software</span>
+                <MapPinIcon className="w-5 h-5 text-cyan group-hover:animate-bounce-slow" />
+                <span>Proudly Serving Minnesota</span>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Animated bottom wave decoration */}
+      {/* Subtle wave decoration - stays within navy theme */}
       <div className="absolute bottom-0 left-0 right-0">
         <svg
           viewBox="0 0 1440 100"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="w-full"
+          className="w-full opacity-30"
         >
           <path
             d="M0 50L48 45.7C96 41 192 33 288 35.3C384 38 480 50 576 55.8C672 62 768 62 864 55.8C960 50 1056 38 1152 35.3C1248 33 1344 41 1392 45.7L1440 50V100H1392C1344 100 1248 100 1152 100C1056 100 960 100 864 100C768 100 672 100 576 100C480 100 384 100 288 100C192 100 96 100 48 100H0V50Z"
-            fill="#F8FAFC"
+            fill="#1E293B"
           />
         </svg>
       </div>

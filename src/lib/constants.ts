@@ -4,10 +4,18 @@ export const COMPANY = {
   tagline: "Your Complete Technology Partner for Business Success",
   description: "We help businesses solve any technology challenge — from custom software development to IT infrastructure, security compliance, and HIPAA certification.",
   location: "Minnesota",
-  phone: "(XXX) XXX-XXXX",
-  email: "contact@arsitech.com",
-  founded: "2026",
-  linkedin: "https://linkedin.com/company/arsitech",
+  phone: "(763) 639-3746",
+  email: "arsitechgroup@gmail.com",
+  founded: "2024",
+  linkedin: "https://www.linkedin.com/in/moyata-ebisso",
+  founder: {
+    name: "Moyata Ebisso",
+    title: "Founder & Lead Engineer",
+    credentials: "M.S. in Electrical & Computer Engineering",
+    email: "arsitechgroup@gmail.com",
+    phone: "(763) 639-3746",
+    linkedin: "https://www.linkedin.com/in/moyata-ebisso",
+  },
 };
 
 export const SERVICES = [
@@ -175,8 +183,8 @@ export const PAIN_POINTS = [
 ];
 
 export const STATS = [
-  { value: "50+", label: "Projects Delivered" },
-  { value: "100%", label: "Client Satisfaction" },
+  { value: "M.S.", label: "Engineering Degree" },
+  { value: "5+", label: "Years Experience" },
   { value: "24/7", label: "Support Available" },
   { value: "4", label: "Day HIPAA Compliance" },
 ];
@@ -218,6 +226,7 @@ export const FAQS = [
 export const NAV_LINKS = [
   { label: "Services", href: "/services" },
   { label: "About", href: "/about" },
+  { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -226,6 +235,7 @@ export const FOOTER_LINKS = {
     { label: "Home", href: "/" },
     { label: "Services", href: "/services" },
     { label: "About", href: "/about" },
+    { label: "Careers", href: "/careers" },
     { label: "Contact", href: "/contact" },
   ],
   services: [
@@ -240,7 +250,7 @@ export const FOOTER_LINKS = {
 };
 
 export const COMPARISON_TABLE = {
-  headers: ["Feature", "Generic IT", "Arsi Technology"],
+  headers: ["Feature", "Generic IT", "Arsi Technology Group"],
   rows: [
     ["Custom Development", "Limited", "Full-Stack"],
     ["HIPAA Expertise", "Basic", "Specialized"],
@@ -253,6 +263,10 @@ export const COMPARISON_TABLE = {
 
 export const ABOUT_VALUES = [
   {
+    title: "Expertise",
+    description: "Advanced engineering education combined with real-world industry experience at Fortune 500 companies.",
+  },
+  {
     title: "Partnership",
     description: "We're not just vendors — we're your long-term technology partner invested in your success.",
   },
@@ -261,14 +275,111 @@ export const ABOUT_VALUES = [
     description: "We translate complex technology into clear, actionable solutions you can understand.",
   },
   {
-    title: "Reliability",
-    description: "When technology issues arise, we respond quickly and resolve them completely.",
-  },
-  {
     title: "Security",
     description: "Your data and systems are protected with enterprise-grade security practices.",
   },
 ];
+
+export const FOUNDER_EDUCATION = [
+  {
+    degree: "M.S. in Electrical & Computer Engineering",
+    school: "University of St. Thomas",
+    location: "St. Paul, MN",
+    date: "Dec. 2025",
+    gpa: "3.8/4.0",
+    focus: "Embedded Intelligent Systems",
+  },
+  {
+    degree: "B.S. in Computer Science",
+    school: "University of Minnesota Twin Cities",
+    location: "Minneapolis, MN",
+    date: "May 2024",
+    minor: "Management (Carlson School of Management)",
+  },
+  {
+    degree: "Document of Completion in Computer Science",
+    school: "Stanford University",
+    location: "Summer Session 2019",
+    courses: "Client-Side Internet Tech, Intro to High-Performance Computing, Calculus",
+  },
+];
+
+export const FOUNDER_EXPERIENCE = [
+  {
+    title: "Power Substation Communication Engineer",
+    company: "Hatch (Canada)",
+    date: "Present",
+    highlights: [
+      "Professional Consultant working on Xcel Energy utility projects through Hatch",
+      "Engineering power substation communication systems and infrastructure",
+    ],
+  },
+  {
+    title: "Substation Communications Engineering Intern",
+    company: "Xcel Energy",
+    date: "May 2025 – Aug 2025",
+    highlights: [
+      "Supported testing and configuration of SEL-411L relays and RTU's (RTAC) for cybersecurity event logging",
+      "Reviewed and updated SCOL models for accurate substation network representations",
+      "Assisted in implementing OTSA logging procedures aligned with NERC CIP standards",
+    ],
+  },
+  {
+    title: "Graduate Student Assistant",
+    company: "University of St. Thomas",
+    date: "Nov 2024 – May 2025",
+    highlights: [
+      "Leveraged Salesforce and Ellucian Banner ERP systems for student profile management",
+      "Designed and maintained web pages using HTML, CSS, and JavaScript",
+    ],
+  },
+  {
+    title: "IT Support Specialist",
+    company: "Rift Valley Transportation",
+    date: "June 2024 – May 2025",
+    highlights: [
+      "Designed and developed business website using Wix with GoDaddy domain integration",
+      "Integrated Cloudflare for performance optimization and security",
+      "Managed email servers and dispatcher app infrastructure",
+    ],
+  },
+  {
+    title: "Web Developer (Contracted)",
+    company: "Entrusted Home Healthcare",
+    date: "June 2024 – Aug 2024",
+    highlights: [
+      "Led website migration from Deluxe Hosting to GoDaddy",
+      "Integrated professional email system improving company's online presence",
+    ],
+  },
+  {
+    title: "TDP Software Engineering Intern",
+    company: "Optum/United Health Group",
+    date: "June 2022 – Aug 2022",
+    highlights: [
+      "Spearheaded team project using Agile/Scrum methodology",
+      "Mastered AlgoSec network security software, contributing to remediation of 16,000+ firewall objects",
+    ],
+  },
+];
+
+export const FOUNDER_SKILLS = {
+  languages: ["Python", "JavaScript", "C", "C++", "Java", "SQL", "C#"],
+  tools: ["MATLAB", "Keil uVision", "Supabase", "Linux", "Git", "Docker", "React", "Firebase", "Agile Methodology"],
+  mlAi: ["scikit-learn", "TensorFlow Lite", "pandas", "NumPy", "matplotlib", "OpenCV"],
+  coursework: [
+    "Machine Learning",
+    "Wireless Sensor Networks",
+    "Real-Time Digital Signal Processing",
+    "Embedded & Cyber Physical Systems",
+    "Introduction to Cybersecurity",
+    "Operating Systems",
+    "Software Engineering",
+    "Computer Networks",
+    "Database Systems",
+    "Data Structures & Algorithms",
+  ],
+};
 
 export const BUSINESS_TYPES = [
   "Healthcare",
