@@ -1,9 +1,8 @@
 import { Metadata } from "next";
-import Link from "next/link";
-import { CheckBadgeIcon, AcademicCapIcon, BriefcaseIcon, CodeBracketIcon, MapPinIcon } from "@heroicons/react/24/solid";
+import { AcademicCapIcon, CodeBracketIcon, MapPinIcon } from "@heroicons/react/24/solid";
 import CTASection from "@/components/CTASection";
 import AnimatedSection from "@/components/AnimatedSection";
-import { ABOUT_VALUES, FOUNDER_EDUCATION, FOUNDER_EXPERIENCE, FOUNDER_SKILLS, COMPANY } from "@/lib/constants";
+import { ABOUT_VALUES, FOUNDER_EDUCATION, FOUNDER_SKILLS, COMPANY } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "About Moyata Ebisso | Arsi Technology Group",
@@ -227,52 +226,6 @@ export default function AboutPage() {
                 </div>
               </div>
             </AnimatedSection>
-          </div>
-        </div>
-      </section>
-
-      {/* Professional Experience */}
-      <section className="py-20 bg-primary bg-grid-pattern relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-secondary via-primary to-secondary opacity-95" />
-
-        {/* Floating elements */}
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-10 right-1/4 w-56 h-56 bg-highlight/10 rounded-full blur-3xl animate-float-slow" />
-          <div className="absolute bottom-20 left-10 w-40 h-40 bg-accent/10 rounded-full blur-3xl animate-float delay-300" />
-        </div>
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <AnimatedSection animation="fade-up">
-            <div className="flex items-center justify-center gap-3 mb-12">
-              <BriefcaseIcon className="w-10 h-10 text-accent" />
-              <h2 className="text-3xl font-bold text-white text-center">Professional Experience</h2>
-            </div>
-          </AnimatedSection>
-
-          <div className="space-y-6">
-            {FOUNDER_EXPERIENCE.map((exp, index) => (
-              <AnimatedSection key={index} animation="fade-up" delay={index * 100}>
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-accent/50 transition-all duration-300">
-                  <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                    <div>
-                      <h3 className="text-xl font-bold text-white">{exp.title}</h3>
-                      <p className="text-accent font-medium">{exp.company}</p>
-                    </div>
-                    <div className="text-gray-300 text-sm mt-2 md:mt-0 bg-white/10 px-3 py-1 rounded-full inline-block">
-                      {exp.date}
-                    </div>
-                  </div>
-                  <ul className="space-y-2">
-                    {exp.highlights.map((highlight, hIndex) => (
-                      <li key={hIndex} className="flex items-start text-gray-200">
-                        <CheckBadgeIcon className="w-5 h-5 text-accent mr-2 mt-0.5 flex-shrink-0" />
-                        <span>{highlight}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </AnimatedSection>
-            ))}
           </div>
         </div>
       </section>
