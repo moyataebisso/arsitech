@@ -10,7 +10,7 @@ const faqs = [
   },
   {
     question: "Do you offer HIPAA compliance services?",
-    answer: "Yes! HIPAA compliance is one of our specialties. We offer comprehensive HIPAA compliance setup in as little as 4 business days, including risk assessment, policy documentation, security configuration, and audit-ready documentation for $2,500.",
+    answer: "Yes! HIPAA compliance is one of our specialties. We offer comprehensive HIPAA compliance setup in as little as 4 business days, including risk assessment, policy documentation, security configuration, and audit-ready documentation. Pricing varies based on the number of computers and practice size — contact us for a quote.",
   },
   {
     question: "Can you build custom software for my business?",

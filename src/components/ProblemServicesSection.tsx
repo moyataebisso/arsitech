@@ -51,8 +51,8 @@ const services = [
   {
     icon: ShieldCheckIcon,
     title: "HIPAA Compliance",
-    price: "$2,500",
-    priceNote: "one-time",
+    price: "Get Quote",
+    priceNote: "prices vary",
     description: "Full compliance in as little as 4 days",
     features: [
       "Complete Risk Assessment",
