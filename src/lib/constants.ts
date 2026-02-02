@@ -16,7 +16,32 @@ export const COMPANY = {
     phone: "(763) 639-3746",
     linkedin: "https://www.linkedin.com/in/moyata-ebisso",
   },
+  mission: "Arsi Technology Group empowers small and mid-sized businesses to achieve enterprise-grade security, compliance, and technology infrastructure at accessible prices. We combine deep technical expertise with hands-on implementation to protect our clients and enable their growth.",
+  vision: "To become the leading cybersecurity and compliance partner for small healthcare practices and diverse community businesses in the Upper Midwest, known for technical excellence, cultural understanding, and genuine care for our clients' success.",
 };
+
+export const CORE_VALUES = [
+  {
+    title: "Technical Excellence",
+    description: "We don't just document compliance — we implement the actual technical controls.",
+  },
+  {
+    title: "Accessibility",
+    description: "Enterprise-quality services should be available to small businesses at affordable prices.",
+  },
+  {
+    title: "Community Connection",
+    description: "We understand the communities we serve through cultural awareness and relationships.",
+  },
+  {
+    title: "Integrity",
+    description: "We protect sensitive data and maintain trust. There are no shortcuts.",
+  },
+  {
+    title: "Education",
+    description: "We empower our clients with knowledge, ensuring they understand their systems and can make informed decisions.",
+  },
+];
 
 export const SERVICES = [
   {
