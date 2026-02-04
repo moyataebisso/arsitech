@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { AcademicCapIcon, CodeBracketIcon, MapPinIcon } from "@heroicons/react/24/solid";
 import CTASection from "@/components/CTASection";
 import AnimatedSection from "@/components/AnimatedSection";
-import { ABOUT_VALUES, FOUNDER_EDUCATION, FOUNDER_SKILLS, COMPANY } from "@/lib/constants";
+import { ABOUT_VALUES, CORE_VALUES, FOUNDER_EDUCATION, FOUNDER_SKILLS, COMPANY } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "About Moyata Ebisso | Arsi Technology Group",
@@ -30,7 +30,44 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Our Values */}
+      {/* Mission & Vision */}
+      <section className="py-20 bg-gradient-to-br from-off-white via-accent/5 to-success/5 relative overflow-hidden">
+        {/* Floating elements */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-10 right-1/4 w-48 h-48 bg-accent/10 rounded-full blur-3xl animate-float-slow" />
+          <div className="absolute bottom-10 left-1/4 w-40 h-40 bg-highlight/10 rounded-full blur-3xl animate-float delay-200" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <AnimatedSection animation="fade-up">
+            <h2 className="text-3xl font-bold text-primary mb-12 text-center">Our Mission & Vision</h2>
+          </AnimatedSection>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <AnimatedSection animation="fade-up" delay={100}>
+              <div className="bg-white rounded-2xl p-8 shadow-lg border border-accent/10 hover:shadow-xl transition-all duration-300 h-full">
+                <div className="w-14 h-14 rounded-xl bg-accent/10 flex items-center justify-center mb-6">
+                  <span className="text-2xl">🎯</span>
+                </div>
+                <h3 className="text-2xl font-bold text-primary mb-4">Our Mission</h3>
+                <p className="text-text-light leading-relaxed">{COMPANY.mission}</p>
+              </div>
+            </AnimatedSection>
+
+            <AnimatedSection animation="fade-up" delay={200}>
+              <div className="bg-white rounded-2xl p-8 shadow-lg border border-accent/10 hover:shadow-xl transition-all duration-300 h-full">
+                <div className="w-14 h-14 rounded-xl bg-highlight/10 flex items-center justify-center mb-6">
+                  <span className="text-2xl">🔭</span>
+                </div>
+                <h3 className="text-2xl font-bold text-primary mb-4">Our Vision</h3>
+                <p className="text-text-light leading-relaxed">{COMPANY.vision}</p>
+              </div>
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* Core Values */}
       <section className="py-20 bg-primary bg-grid-pattern relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary via-secondary to-primary opacity-95" />
 
@@ -42,18 +79,49 @@ export default function AboutPage() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <AnimatedSection animation="fade-up">
-            <h2 className="text-3xl font-bold text-white mb-12 text-center">Our Values</h2>
+            <h2 className="text-3xl font-bold text-white mb-4 text-center">Our Core Values</h2>
+            <p className="text-gray-300 text-center mb-12 max-w-2xl mx-auto">The principles that guide everything we do</p>
+          </AnimatedSection>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6">
+            {CORE_VALUES.map((value, index) => (
+              <AnimatedSection key={index} animation="fade-up" delay={index * 100}>
+                <div className="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-accent/50 transition-all duration-300 hover:-translate-y-2 h-full">
+                  <div className="w-12 h-12 rounded-full bg-gradient-to-br from-accent to-cyan flex items-center justify-center mx-auto mb-4">
+                    <span className="text-lg font-bold text-white">{index + 1}</span>
+                  </div>
+                  <h3 className="text-lg font-semibold text-white mb-2">{value.title}</h3>
+                  <p className="text-gray-300 text-sm">{value.description}</p>
+                </div>
+              </AnimatedSection>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* What We Deliver */}
+      <section className="py-20 bg-gradient-to-br from-off-white via-accent/5 to-success/5 relative overflow-hidden">
+        {/* Floating elements */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-20 left-10 w-48 h-48 bg-accent/10 rounded-full blur-3xl animate-float" />
+          <div className="absolute bottom-10 right-20 w-40 h-40 bg-highlight/10 rounded-full blur-3xl animate-float-slow delay-200" />
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <AnimatedSection animation="fade-up">
+            <h2 className="text-3xl font-bold text-primary mb-4 text-center">What We Deliver</h2>
+            <p className="text-text-light text-center mb-12 max-w-2xl mx-auto">What you can expect when working with us</p>
           </AnimatedSection>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {ABOUT_VALUES.map((value, index) => (
               <AnimatedSection key={index} animation="fade-up" delay={index * 100}>
-                <div className="text-center bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-accent/50 transition-all duration-300 hover:-translate-y-2 h-full">
+                <div className="text-center bg-white rounded-2xl p-6 shadow-lg border border-accent/10 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 h-full">
                   <div className="w-16 h-16 rounded-full bg-gradient-to-br from-accent to-cyan flex items-center justify-center mx-auto mb-4">
                     <span className="text-2xl font-bold text-white">{index + 1}</span>
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-3">{value.title}</h3>
-                  <p className="text-gray-300">{value.description}</p>
+                  <h3 className="text-xl font-semibold text-primary mb-3">{value.title}</h3>
+                  <p className="text-text-light">{value.description}</p>
                 </div>
               </AnimatedSection>
             ))}
