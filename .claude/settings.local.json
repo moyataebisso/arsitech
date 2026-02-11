@@ -10,7 +10,10 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(git branch:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(dir \"C:\\\\Users\\\\ebiss\\\\OneDrive\\\\Pictures\\\\Screenshots\" /b)",
+      "Bash(findstr:*)",
+      "Bash(node scripts/upload-logos.js:*)"
     ]
   }
 }

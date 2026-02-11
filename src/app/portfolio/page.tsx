@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { ArrowTopRightOnSquareIcon, HeartIcon, AcademicCapIcon, HomeModernIcon, TruckIcon, CheckBadgeIcon } from "@heroicons/react/24/outline";
+import { ArrowTopRightOnSquareIcon, HeartIcon, AcademicCapIcon, HomeModernIcon, TruckIcon, CheckBadgeIcon, ShoppingBagIcon } from "@heroicons/react/24/outline";
 import CTASection from "@/components/CTASection";
 import AnimatedSection from "@/components/AnimatedSection";
 
@@ -48,6 +48,16 @@ const clients = [
     icon: TruckIcon,
     description: "Our earliest client. Provided complete technology foundation including website development, business email setup, and various business applications. Full hosting and ongoing management through GoDaddy and Wix platforms.",
     services: ["Website Development", "Email Setup", "Business Applications", "Hosting & Management"],
+    highlight: false,
+  },
+  {
+    name: "INDSVE",
+    website: "https://indsve.com/",
+    industry: "Fashion / E-commerce",
+    projectType: "Shopify Clothing Brand",
+    icon: ShoppingBagIcon,
+    description: "E-commerce fashion brand built on Shopify. Provided UI/UX customization to create a unique shopping experience, implemented SMS notification system for customer order updates, and custom code modifications to enhance store functionality.",
+    services: ["Shopify UI/UX Customization", "SMS Notification Setup", "Code Modifications", "E-commerce Optimization"],
     highlight: false,
   },
 ];
@@ -194,7 +204,7 @@ export default function PortfolioPage() {
           <AnimatedSection animation="fade-up">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               <div>
-                <div className="text-4xl font-bold text-accent mb-2">4+</div>
+                <div className="text-4xl font-bold text-accent mb-2">5+</div>
                 <div className="text-gray-300">Happy Clients</div>
               </div>
               <div>
@@ -236,7 +246,7 @@ export default function PortfolioPage() {
 
           <AnimatedSection animation="fade-up" delay={200}>
             <div className="flex flex-wrap justify-center gap-4">
-              {["Healthcare", "Home Care", "Training & Education", "Transportation", "Professional Services", "Small Business"].map((industry, index) => (
+              {["Healthcare", "Home Care", "Training & Education", "Transportation", "Fashion & E-commerce", "Small Business"].map((industry, index) => (
                 <span
                   key={index}
                   className="px-6 py-3 bg-white/10 backdrop-blur-sm rounded-full text-gray-200 font-medium border border-white/10 hover:border-accent/50 transition-colors"

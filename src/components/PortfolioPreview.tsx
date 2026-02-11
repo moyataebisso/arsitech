@@ -1,29 +1,36 @@
 "use client";
 
 import Link from "next/link";
-import { HeartIcon, AcademicCapIcon, HomeModernIcon, TruckIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
 import AnimatedSection from "./AnimatedSection";
+import ClientCarousel from "./ClientCarousel";
 
+// Client data with Supabase storage logo URLs
 const clients = [
   {
     name: "CareConnect Live",
     industry: "Healthcare",
-    icon: HeartIcon,
+    logo: "https://abhpzepanwhuswhiuutu.supabase.co/storage/v1/object/public/logos/careconnect-logo.png",
   },
   {
     name: "SaveYours",
     industry: "CPR Training",
-    icon: AcademicCapIcon,
+    logo: "https://abhpzepanwhuswhiuutu.supabase.co/storage/v1/object/public/logos/saveyours-logo.png",
   },
   {
     name: "Entrusted Home Healthcare",
     industry: "Home Healthcare",
-    icon: HomeModernIcon,
+    logo: "https://abhpzepanwhuswhiuutu.supabase.co/storage/v1/object/public/logos/entrusted-logo.png",
   },
   {
     name: "Rift Valley Transportation",
     industry: "Transportation",
-    icon: TruckIcon,
+    logo: "https://abhpzepanwhuswhiuutu.supabase.co/storage/v1/object/public/logos/riftvalley-logo.png",
+  },
+  {
+    name: "INDSVE",
+    industry: "Fashion / E-commerce",
+    logo: "https://abhpzepanwhuswhiuutu.supabase.co/storage/v1/object/public/logos/indsve-logo.png",
   },
 ];
 
@@ -51,22 +58,10 @@ export default function PortfolioPreview() {
           </p>
         </AnimatedSection>
 
-        {/* Client Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-          {clients.map((client, index) => (
-            <AnimatedSection key={index} animation="fade-up" delay={index * 100}>
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-accent/50 transition-all duration-300 hover:-translate-y-2 text-center group">
-                <div className="w-14 h-14 rounded-xl bg-accent/20 flex items-center justify-center mx-auto mb-4 group-hover:bg-accent group-hover:scale-110 transition-all duration-300">
-                  <client.icon className="w-7 h-7 text-accent group-hover:text-white transition-colors" />
-                </div>
-                <h3 className="font-semibold text-white mb-1 group-hover:text-accent transition-colors">
-                  {client.name}
-                </h3>
-                <p className="text-sm text-gray-400">{client.industry}</p>
-              </div>
-            </AnimatedSection>
-          ))}
-        </div>
+        {/* Client Carousel */}
+        <AnimatedSection animation="fade-up" delay={200} className="mb-12 px-8">
+          <ClientCarousel clients={clients} />
+        </AnimatedSection>
 
         {/* CTA */}
         <AnimatedSection animation="fade-up" delay={400} className="text-center">

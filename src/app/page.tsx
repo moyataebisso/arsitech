@@ -14,11 +14,11 @@ export default function Home() {
       {/* Problem + Services Section (Combined) */}
       <ProblemServicesSection />
 
+      {/* Portfolio Preview - Trusted By Minnesota Businesses (moved above Process) */}
+      <PortfolioPreview />
+
       {/* Process + Who We Serve Section (Combined) */}
       <ProcessAudienceSection />
-
-      {/* Portfolio Preview - Trusted By Minnesota Businesses */}
-      <PortfolioPreview />
 
       {/* Team + Credentials Section (Combined) */}
       <TeamCredentialsSection />
