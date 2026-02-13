@@ -8,6 +8,12 @@ import ClientCarousel from "./ClientCarousel";
 // Client data with Supabase storage logo URLs
 const clients = [
   {
+    name: "ODDA Platform",
+    industry: "Education",
+    logo: "https://abhpzepanwhuswhiuutu.supabase.co/storage/v1/object/public/logos/odda-logo.png",
+    url: "https://oromo-platform.vercel.app",
+  },
+  {
     name: "CareConnect Live",
     industry: "Healthcare",
     logo: "https://abhpzepanwhuswhiuutu.supabase.co/storage/v1/object/public/logos/careconnect-logo.png",

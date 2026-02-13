@@ -11,6 +11,16 @@ export const metadata: Metadata = {
 
 const clients = [
   {
+    name: "ODDA Platform",
+    website: "https://oromo-platform.vercel.app",
+    industry: "Education",
+    projectType: "Full Education Platform",
+    icon: AcademicCapIcon,
+    description: "Built a comprehensive education platform for the Oromo community featuring free world-class courses covering language, culture, history, and career skills. Includes personalized learning paths for all ages (kids to adults), parent/teacher dashboards, and an AI-powered Oromo language assistant.",
+    services: ["Full-Stack Development", "AI Integration", "User Dashboard", "Course Management"],
+    highlight: true,
+  },
+  {
     name: "Entrusted Home Healthcare",
     website: "https://entrustedhomehealthcare.org",
     industry: "Home Healthcare",
@@ -204,7 +214,7 @@ export default function PortfolioPage() {
           <AnimatedSection animation="fade-up">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               <div>
-                <div className="text-4xl font-bold text-accent mb-2">5+</div>
+                <div className="text-4xl font-bold text-accent mb-2">6+</div>
                 <div className="text-gray-300">Happy Clients</div>
               </div>
               <div>
