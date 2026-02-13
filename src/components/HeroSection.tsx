@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { CodeBracketIcon, ShieldCheckIcon, ServerStackIcon, CpuChipIcon, AcademicCapIcon, MapPinIcon } from "@heroicons/react/24/solid";
+import { CodeBracketIcon, ShieldCheckIcon, CpuChipIcon, AcademicCapIcon, MapPinIcon } from "@heroicons/react/24/solid";
 
 export default function HeroSection() {
   return (
@@ -43,32 +43,6 @@ export default function HeroSection() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
         <div className="max-w-3xl">
-          {/* Trust badges with stagger animation */}
-          <div className="flex flex-wrap gap-3 mb-6">
-            <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-highlight/20 text-highlight text-sm font-medium animate-fade-in-up opacity-0" style={{ animationDelay: '0.1s', animationFillMode: 'forwards' }}>
-              <AcademicCapIcon className="w-4 h-4 mr-2" />
-              M.S. Engineering Expertise
-            </span>
-            <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-cyan/20 text-cyan text-sm font-medium animate-fade-in-up opacity-0" style={{ animationDelay: '0.15s', animationFillMode: 'forwards' }}>
-              <MapPinIcon className="w-4 h-4 mr-2" />
-              Minnesota-Based
-            </span>
-          </div>
-          <div className="flex flex-wrap gap-3 mb-8">
-            <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-accent/20 text-accent text-sm font-medium animate-fade-in-up opacity-0" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
-              <CodeBracketIcon className="w-4 h-4 mr-2" />
-              Software Development
-            </span>
-            <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-highlight/20 text-highlight text-sm font-medium animate-fade-in-up opacity-0" style={{ animationDelay: '0.25s', animationFillMode: 'forwards' }}>
-              <ServerStackIcon className="w-4 h-4 mr-2" />
-              IT Consulting
-            </span>
-            <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-success/20 text-success text-sm font-medium animate-fade-in-up opacity-0" style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}>
-              <ShieldCheckIcon className="w-4 h-4 mr-2" />
-              HIPAA Compliance
-            </span>
-          </div>
-
           {/* Main headline with animation */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 animate-fade-in-up opacity-0" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>
             Your Technology Partner for{" "}
