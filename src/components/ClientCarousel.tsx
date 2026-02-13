@@ -10,6 +10,7 @@ interface Client {
   name: string;
   industry: string;
   logo?: string; // URL to logo image (Supabase storage)
+  url?: string; // URL to client website
 }
 
 interface ClientCarouselProps {
@@ -61,12 +62,9 @@ export default function ClientCarousel({ clients }: ClientCarouselProps) {
       {/* Carousel Container */}
       <div className="overflow-hidden" ref={emblaRef}>
         <div className="flex">
-          {clients.map((client, index) => (
-            <div
-              key={index}
-              className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/4 px-3"
-            >
-              <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-accent/50 transition-all duration-300 hover:-translate-y-2 text-center group h-full">
+          {clients.map((client, index) => {
+            const CardContent = (
+              <>
                 {/* Logo Container */}
                 <div className="w-20 h-20 rounded-xl bg-white/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-white/20 group-hover:scale-110 transition-all duration-300 overflow-hidden">
                   {client.logo ? (
@@ -89,9 +87,31 @@ export default function ClientCarousel({ clients }: ClientCarouselProps) {
                   {client.name}
                 </h3>
                 <p className="text-sm text-gray-400">{client.industry}</p>
+              </>
+            );
+
+            return (
+              <div
+                key={index}
+                className="flex-shrink-0 w-full sm:w-1/2 lg:w-1/4 px-3"
+              >
+                {client.url ? (
+                  <a
+                    href={client.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-accent/50 transition-all duration-300 hover:-translate-y-2 text-center group h-full cursor-pointer"
+                  >
+                    {CardContent}
+                  </a>
+                ) : (
+                  <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-accent/50 transition-all duration-300 hover:-translate-y-2 text-center group h-full">
+                    {CardContent}
+                  </div>
+                )}
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 

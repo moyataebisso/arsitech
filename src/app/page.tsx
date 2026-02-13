@@ -10,11 +10,11 @@ export default function Home() {
       {/* Hero Section */}
       <HeroSection />
 
+      {/* Portfolio Preview - Trusted By Minnesota Businesses */}
+      <PortfolioPreview />
+
       {/* Problem + Services Section (Combined) */}
       <ProblemServicesSection />
-
-      {/* Portfolio Preview - Trusted By Minnesota Businesses (moved above Process) */}
-      <PortfolioPreview />
 
       {/* Process + Who We Serve Section (Combined) */}
       <ProcessAudienceSection />

@@ -11,26 +11,31 @@ const clients = [
     name: "CareConnect Live",
     industry: "Healthcare",
     logo: "https://abhpzepanwhuswhiuutu.supabase.co/storage/v1/object/public/logos/careconnect-logo.png",
+    url: "https://careconnectlive.com",
   },
   {
     name: "SaveYours",
     industry: "CPR Training",
     logo: "https://abhpzepanwhuswhiuutu.supabase.co/storage/v1/object/public/logos/saveyours-logo.png",
+    url: "https://saveyours.org",
   },
   {
     name: "Entrusted Home Healthcare",
     industry: "Home Healthcare",
     logo: "https://abhpzepanwhuswhiuutu.supabase.co/storage/v1/object/public/logos/entrusted-logo.png",
+    url: "https://entrustedhomehealthcare.com",
   },
   {
     name: "Rift Valley Transportation",
     industry: "Transportation",
     logo: "https://abhpzepanwhuswhiuutu.supabase.co/storage/v1/object/public/logos/riftvalley-logo.png",
+    url: "https://riftvalleytransportation.com",
   },
   {
     name: "INDSVE",
     industry: "Fashion / E-commerce",
     logo: "https://abhpzepanwhuswhiuutu.supabase.co/storage/v1/object/public/logos/indsve-logo.png",
+    url: "https://indsve.com",
   },
 ];
 
