@@ -50,13 +50,18 @@ export default function Navigation() {
           </div>
 
           {/* Desktop CTA */}
-          <div className="hidden md:block">
+          <div className="hidden md:flex items-center gap-4">
             <Link
               href="/contact"
               className="bg-accent hover:bg-accent-dark text-white px-6 py-2.5 rounded-lg font-medium transition-colors"
             >
               Free Consultation
             </Link>
+            <a
+              href="/arsi-admin"
+              className="w-1.5 h-1.5 rounded-full bg-gray-400 opacity-20 hover:opacity-60 transition-opacity cursor-pointer"
+              title="Portal"
+            />
           </div>
 
           {/* Mobile Menu Button */}
