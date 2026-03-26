@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, DM_Sans } from "next/font/google";
 import "./globals.css";
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
+import { PublicShell } from "@/components/PublicShell";
 
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
@@ -46,11 +45,9 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        <Navigation />
-        <main id="main-content">
+        <PublicShell>
           {children}
-        </main>
-        <Footer />
+        </PublicShell>
       </body>
     </html>
   );

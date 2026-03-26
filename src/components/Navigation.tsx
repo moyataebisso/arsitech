@@ -58,7 +58,7 @@ export default function Navigation() {
               Free Consultation
             </Link>
             <a
-              href="/arsi-admin"
+              href="/admin/dashboard"
               className="w-1.5 h-1.5 rounded-full bg-gray-400 opacity-20 hover:opacity-60 transition-opacity cursor-pointer"
               title="Portal"
             />
