@@ -2,9 +2,11 @@ export const dynamic = "force-dynamic";
 
 const SITES = [
   { name: "ArsiTech Group", url: "https://www.arsitechgroup.com" },
-  { name: "Cimaa Sites", url: "https://www.cimaasites.ai" },
+  { name: "Cimaa Sites", url: "https://cimaasites.vercel.app" },
   { name: "CareConnect Live", url: "https://www.careconnectlive.org" },
   { name: "SaveYours", url: "https://www.saveyours.net" },
+  { name: "Arsi Command Center", url: "https://arsi-command-center.vercel.app" },
+  { name: "Oromo Platform", url: "https://oromo-platform.vercel.app" },
 ];
 
 async function checkSite(url: string) {
