@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 
 export async function POST(request: NextRequest) {
   try {
@@ -24,19 +24,12 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Create transporter using Gmail SMTP
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.GMAIL_USER,
-        pass: process.env.GMAIL_APP_PASSWORD,
-      },
-    });
+    const resend = new Resend(process.env.RESEND_API_KEY);
 
-    // Email content
-    const mailOptions = {
-      from: process.env.GMAIL_USER,
-      to: process.env.GMAIL_USER, // Send to yourself
+    // Send notification email to yourself
+    await resend.emails.send({
+      from: `Arsi Tech Contact <${process.env.RESEND_FROM_EMAIL}>`,
+      to: "arsitechgroup@gmail.com",
       replyTo: email,
       subject: `New Contact Form Submission - ${businessName}`,
       html: `
@@ -54,14 +47,11 @@ export async function POST(request: NextRequest) {
         <hr />
         <p style="color: #666; font-size: 12px;">This message was sent from the Arsi Technology Group website contact form.</p>
       `,
-    };
-
-    // Send email
-    await transporter.sendMail(mailOptions);
+    });
 
     // Send confirmation email to the user
-    const confirmationMailOptions = {
-      from: process.env.GMAIL_USER,
+    await resend.emails.send({
+      from: `Arsi Technology Group <${process.env.RESEND_FROM_EMAIL}>`,
       to: email,
       subject: "We received your message - Arsi Technology Group",
       html: `
@@ -78,9 +68,7 @@ export async function POST(request: NextRequest) {
         <hr />
         <p style="color: #666; font-size: 12px;">Minnesota-Based Technology Consulting</p>
       `,
-    };
-
-    await transporter.sendMail(confirmationMailOptions);
+    });
 
     return NextResponse.json({ success: true });
   } catch (error) {
