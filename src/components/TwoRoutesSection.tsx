@@ -137,7 +137,7 @@ export default function TwoRoutesSection() {
 
               {/* CTA */}
               <Link
-                href="/services#hipaa-compliance"
+                href="/services#healthcare"
                 className="inline-flex items-center justify-center w-full sm:w-auto bg-accent hover:bg-accent-dark text-white px-6 py-3.5 rounded-xl font-semibold transition-all duration-300 group-hover:shadow-lg group-hover:shadow-accent/40"
               >
                 Learn More

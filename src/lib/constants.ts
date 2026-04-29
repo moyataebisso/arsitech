@@ -261,7 +261,7 @@ export const NAV_LINKS: NavLink[] = [
     href: "/services",
     children: [
       { label: "Waji Websites", href: "https://cimaasites.ai", external: true },
-      { label: "HIPAA & Healthcare IT", href: "/services#hipaa-compliance" },
+      { label: "HIPAA & Healthcare IT", href: "/services#healthcare" },
     ],
   },
   { label: "Portfolio", href: "/portfolio" },
@@ -280,10 +280,9 @@ export const FOOTER_LINKS = {
     { label: "Contact", href: "/contact" },
   ],
   services: [
-    { label: "Software Development", href: "/services#software-development" },
+    { label: "Waji Websites", href: "https://cimaasites.ai" },
+    { label: "HIPAA & Healthcare IT", href: "/services#healthcare" },
     { label: "IT Consulting", href: "/services#it-consulting" },
-    { label: "HIPAA Compliance", href: "/services#hipaa-compliance" },
-    { label: "Security & Compliance", href: "/services#security-compliance" },
   ],
   legal: [
     { label: "Privacy Policy", href: "/privacy-policy" },
