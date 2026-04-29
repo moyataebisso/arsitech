@@ -16,8 +16,8 @@ export const COMPANY = {
     phone: "(763) 639-3746",
     linkedin: "https://www.linkedin.com/in/moyata-ebisso",
   },
-  mission: "Arsi Technology Group empowers small and mid-sized businesses to achieve enterprise-grade security, compliance, and technology infrastructure at accessible prices. We combine deep technical expertise with hands-on implementation to protect our clients and enable their growth.",
-  vision: "To become the leading cybersecurity and compliance partner for small healthcare practices and diverse community businesses in the Upper Midwest, known for technical excellence, cultural understanding, and genuine care for our clients' success.",
+  mission: "We focus on affordable tech for local businesses — websites, hosting, and fractional IT — with HIPAA Healthcare as our flagship specialty. One bundled monthly fee. One human to call. Small operators get enterprise-quality tech without the enterprise bill.",
+  vision: "To be Minnesota's go-to technology partner for small and local businesses — restaurants, group homes, clinics, transport companies, nonprofits — known for clear pricing, real human support, and honest scope.",
 };
 
 export const CORE_VALUES = [
@@ -271,18 +271,17 @@ export const NAV_LINKS: NavLink[] = [
 ];
 
 export const FOOTER_LINKS = {
-  quickLinks: [
+  company: [
     { label: "Home", href: "/" },
-    { label: "Services", href: "/services" },
-    { label: "Portfolio", href: "/portfolio" },
     { label: "About", href: "/about" },
-    { label: "Careers", href: "/careers" },
+    { label: "Services", href: "/services" },
     { label: "Contact", href: "/contact" },
   ],
   services: [
-    { label: "Waji Websites", href: "https://cimaasites.ai" },
-    { label: "HIPAA & Healthcare IT", href: "/services#healthcare" },
-    { label: "IT Consulting", href: "/services#it-consulting" },
+    { label: "Waji Professional Websites", href: "https://cimaasites.ai", external: true },
+    { label: "HIPAA Compliance", href: "/services#healthcare" },
+    { label: "Healthcare IT", href: "/services#healthcare" },
+    { label: "IT Consulting", href: "/services" },
   ],
   legal: [
     { label: "Privacy Policy", href: "/privacy-policy" },
@@ -430,9 +429,10 @@ export const BUSINESS_TYPES = [
 ];
 
 export const SERVICE_INTERESTS = [
-  "Software Development",
-  "IT Consulting",
-  "HIPAA Compliance",
-  "Security & Compliance",
-  "Not Sure",
+  "I need a website (Waji)",
+  "I'm a healthcare provider, need HIPAA compliance",
+  "I need IT consulting / general tech help",
+  "Not sure — I want to talk",
 ];
+
+export const HIPAA_SERVICE_INTEREST = "I'm a healthcare provider, need HIPAA compliance";

@@ -1,53 +1,75 @@
 import Link from "next/link";
-import { ShieldCheckIcon, AcademicCapIcon, MapPinIcon } from "@heroicons/react/24/solid";
+import { ShieldCheckIcon, MapPinIcon } from "@heroicons/react/24/solid";
+import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import { COMPANY, FOOTER_LINKS } from "@/lib/constants";
 
 export default function Footer() {
+  const year = new Date().getFullYear();
+
   return (
     <footer className="bg-gradient-to-br from-primary via-secondary to-primary text-white relative overflow-hidden">
-      {/* Floating decorative elements */}
+      {/* Decorative blobs */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-10 right-10 w-64 h-64 bg-accent/5 rounded-full blur-3xl animate-float-slow" />
         <div className="absolute bottom-10 left-10 w-48 h-48 bg-cyan/5 rounded-full blur-3xl animate-float delay-300" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Brand Column */}
-          <div className="lg:col-span-1">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
+          {/* Column 1 — Brand */}
+          <div>
             <Link href="/" className="flex items-center space-x-2 mb-4">
               <ShieldCheckIcon className="h-8 w-8 text-accent" />
-              <span className="text-xl font-bold tracking-tight">
+              <span className="text-lg font-bold tracking-tight">
                 ARSI <span className="text-accent">TECHNOLOGY GROUP</span>
               </span>
             </Link>
-            <p className="text-gray-300 text-sm italic mb-3">
+            <p className="text-gray-300 text-sm italic leading-relaxed mb-4">
               Big-company tech. Small-business prices. Real human support.
             </p>
-            <p className="text-gray-400 text-sm mb-4">
-              {COMPANY.tagline}
-            </p>
-            {/* Founder credentials */}
-            <div className="flex flex-col gap-2 mb-4">
-              <div className="flex items-center gap-2 text-sm">
-                <AcademicCapIcon className="w-4 h-4 text-highlight" />
-                <span className="text-gray-300">M.S. Engineering Led</span>
-              </div>
-              <div className="flex items-center gap-2 text-sm">
-                <MapPinIcon className="w-4 h-4 text-cyan" />
-                <span className="text-gray-300">Minnesota-Based</span>
-              </div>
-            </div>
-            <p className="text-gray-500 text-sm">
-              &copy; {new Date().getFullYear()} {COMPANY.legalName}
+            <p className="text-gray-500 text-sm mb-1">&copy; {year} {COMPANY.legalName}</p>
+            <p className="text-gray-500 text-sm flex items-center gap-1">
+              <MapPinIcon className="w-3.5 h-3.5 text-highlight" />
+              Minneapolis, Minnesota
             </p>
           </div>
 
-          {/* Quick Links Column */}
+          {/* Column 2 — Services */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
+            <h3 className="font-semibold text-base mb-4 text-white">Services</h3>
             <ul className="space-y-3">
-              {FOOTER_LINKS.quickLinks.map((link) => (
+              {FOOTER_LINKS.services.map((link) =>
+                link.external ? (
+                  <li key={link.label}>
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1.5 text-gray-400 hover:text-white transition-colors text-sm"
+                    >
+                      {link.label}
+                      <ArrowTopRightOnSquareIcon className="w-3.5 h-3.5" />
+                    </a>
+                  </li>
+                ) : (
+                  <li key={link.label}>
+                    <Link
+                      href={link.href}
+                      className="text-gray-400 hover:text-white transition-colors text-sm"
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                )
+              )}
+            </ul>
+          </div>
+
+          {/* Column 3 — Company */}
+          <div>
+            <h3 className="font-semibold text-base mb-4 text-white">Company</h3>
+            <ul className="space-y-3">
+              {FOOTER_LINKS.company.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
@@ -60,50 +82,28 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Services Column */}
+          {/* Column 4 — Contact */}
           <div>
-            <h3 className="font-semibold text-lg mb-4">Services</h3>
-            <ul className="space-y-3">
-              {FOOTER_LINKS.services.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className="text-gray-400 hover:text-white transition-colors text-sm"
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Contact Column */}
-          <div>
-            <h3 className="font-semibold text-lg mb-4">Contact</h3>
-            <ul className="space-y-4 text-sm">
+            <h3 className="font-semibold text-base mb-4 text-white">Contact</h3>
+            <ul className="space-y-3 text-sm">
               <li>
                 <span className="block text-white font-medium mb-1">Email</span>
                 <a
                   href={`mailto:${COMPANY.email}`}
-                  className="text-gray-400 hover:text-white transition-colors"
+                  className="text-gray-400 hover:text-white transition-colors break-all"
                 >
                   {COMPANY.email}
                 </a>
               </li>
-              <li>
-                <span className="block text-white font-medium mb-1">Phone</span>
-                <a
-                  href={`tel:${COMPANY.phone.replace(/[^0-9]/g, "")}`}
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  {COMPANY.phone}
-                </a>
-              </li>
-              <li>
-                <span className="block text-white font-medium mb-1">Location</span>
-                <span className="text-gray-400">{COMPANY.location}</span>
-              </li>
               <li className="pt-2">
+                <Link
+                  href="/admin/dashboard"
+                  className="inline-flex items-center text-gray-400 hover:text-accent transition-colors font-medium"
+                >
+                  Login
+                </Link>
+              </li>
+              <li className="pt-1">
                 <a
                   href={COMPANY.linkedin}
                   target="_blank"
@@ -127,13 +127,12 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Bottom bar */}
+      {/* Bottom strip */}
       <div className="border-t border-white/10 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm text-center md:text-left">
-              <MapPinIcon className="w-4 h-4 inline mr-1 text-highlight" />
-              Proudly serving Minneapolis, St. Paul, and businesses across Minnesota and nationwide
+              A Minnesota-based technology company building tech that fits your size and your budget.
             </p>
             <div className="flex gap-6">
               {FOOTER_LINKS.legal.map((link) => (

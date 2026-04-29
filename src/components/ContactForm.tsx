@@ -15,7 +15,11 @@ interface FormData {
   contactPreference: string;
 }
 
-export default function ContactForm() {
+interface ContactFormProps {
+  defaultService?: string;
+}
+
+export default function ContactForm({ defaultService = "" }: ContactFormProps) {
   const [formData, setFormData] = useState<FormData>({
     firstName: "",
     lastName: "",
@@ -23,7 +27,7 @@ export default function ContactForm() {
     phone: "",
     businessName: "",
     businessType: "",
-    serviceInterest: "",
+    serviceInterest: defaultService,
     message: "",
     contactPreference: "either",
   });
@@ -57,7 +61,7 @@ export default function ContactForm() {
         phone: "",
         businessName: "",
         businessType: "",
-        serviceInterest: "",
+        serviceInterest: defaultService,
         message: "",
         contactPreference: "either",
       });

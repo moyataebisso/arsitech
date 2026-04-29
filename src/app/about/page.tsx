@@ -1,24 +1,109 @@
 import { Metadata } from "next";
-import { AcademicCapIcon, CodeBracketIcon, MapPinIcon } from "@heroicons/react/24/solid";
+import { AcademicCapIcon, CodeBracketIcon, MapPinIcon, UsersIcon, CubeIcon } from "@heroicons/react/24/solid";
 import CTASection from "@/components/CTASection";
 import AnimatedSection from "@/components/AnimatedSection";
 import { ABOUT_VALUES, CORE_VALUES, FOUNDER_EDUCATION, FOUNDER_SKILLS, COMPANY } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "About Moyata Ebisso | Arsi Technology Group",
-  description: "Meet Moyata Ebisso, M.S. Engineering graduate and founder of Arsi Technology Group. Minnesota-based technology consulting with deep expertise in software development, embedded systems, and IT infrastructure.",
+  title: "About | Arsi Technology Group — Tech that fits your size and your budget",
+  description:
+    "Big-company tech. Small-business prices. Real human support. Minneapolis-based, Minnesota-focused — built for the small and local end of the market with HIPAA Healthcare as our flagship specialty.",
 };
+
+const HOW_WE_WORK = [
+  {
+    icon: UsersIcon,
+    title: "We start small.",
+    body:
+      "We don't take Fortune 500 clients. Our entire business model is designed around the small and local end of the market — restaurants, group homes, transport companies, nonprofits, clinics. The kinds of businesses that can't afford an MSP or a HIPAA consultant but still deserve good tech.",
+  },
+  {
+    icon: CubeIcon,
+    title: "We bundle everything.",
+    body:
+      "Most tech vendors nickel-and-dime: setup fee, monthly fee, hourly support, change requests, add-on modules, premium tier upcharges. We bundle the work into one monthly fee with one person to call. If something needs fixing, you text us. That's it.",
+  },
+  {
+    icon: MapPinIcon,
+    title: "We're local.",
+    body:
+      "Minneapolis-based, Minnesota-focused. We know MHRA, MGDPA, MCDPA, and DHS Rule 203 because our clients live with these laws every day. Out-of-state consultancies miss this.",
+  },
+];
 
 export default function AboutPage() {
   return (
     <>
-      {/* Why "Arsi" */}
+      {/* About Hero */}
       <section className="pt-32 pb-20 bg-primary bg-grid-pattern relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary via-secondary to-primary opacity-95" />
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-20 right-20 w-64 h-64 bg-accent/10 rounded-full blur-3xl animate-float-slow" />
+          <div className="absolute bottom-10 left-10 w-48 h-48 bg-highlight/10 rounded-full blur-3xl animate-float delay-300" />
+        </div>
+
+        <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <AnimatedSection animation="fade-up">
+            <span className="inline-block text-sm font-semibold tracking-widest text-accent uppercase mb-4">
+              About Us
+            </span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+              Tech support that fits your size <br className="hidden md:block" />
+              and your budget.
+            </h1>
+            <p className="text-xl md:text-2xl italic text-gray-200">
+              Big-company tech. <span className="text-accent not-italic font-semibold">Small-business prices.</span>{" "}
+              <span className="text-gray-400">Real human support.</span>
+            </p>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* How We Work */}
+      <section className="py-20 bg-off-white relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-10 left-10 w-48 h-48 bg-accent/5 rounded-full blur-3xl" />
+          <div className="absolute bottom-10 right-10 w-48 h-48 bg-highlight/5 rounded-full blur-3xl" />
+        </div>
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedSection animation="fade-up">
+            <div className="max-w-3xl mb-14">
+              <span className="inline-block text-sm font-semibold tracking-widest text-accent uppercase mb-3">
+                How we work
+              </span>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary leading-tight">
+                Three things we do differently.
+              </h2>
+            </div>
+          </AnimatedSection>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {HOW_WE_WORK.map((col, index) => {
+              const Icon = col.icon;
+              return (
+                <AnimatedSection key={col.title} animation="fade-up" delay={index * 100}>
+                  <div className="h-full bg-white rounded-2xl p-7 md:p-8 border border-gray-100 shadow-md hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                    <div className="w-12 h-12 rounded-xl bg-accent/15 flex items-center justify-center mb-5">
+                      <Icon className="w-6 h-6 text-accent" />
+                    </div>
+                    <h3 className="text-xl md:text-2xl font-bold text-primary mb-3">{col.title}</h3>
+                    <p className="text-text-light leading-relaxed">{col.body}</p>
+                  </div>
+                </AnimatedSection>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Why "Arsi" */}
+      <section className="py-20 bg-primary bg-grid-pattern relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-secondary via-primary to-secondary opacity-95" />
 
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
           <AnimatedSection animation="fade-up">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-8">Why &quot;Arsi&quot;?</h1>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">Why &quot;Arsi&quot;?</h2>
             <p className="text-xl text-gray-300 leading-relaxed mb-6">
               The name &quot;Arsi&quot; comes from the Arsi region of Oromia — a nod to my heritage and the values of community, trust, and dedication that I bring to every client relationship.
             </p>

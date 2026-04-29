@@ -18,15 +18,20 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Arsi Technology Group | Big-company tech. Small-business prices. Real human support.",
-  description: "Big-company tech. Small-business prices. Real human support. Arsi Technology Group helps Minnesota businesses with websites, hosting, HIPAA compliance, and fractional IT — at prices designed for small and local owners.",
-  keywords: "Minnesota websites, small business IT, HIPAA compliance, fractional security officer, Waji websites, healthcare IT, technology consulting, Twin Cities",
+  title: "Arsi Technology Group | Affordable Tech for Minnesota Businesses",
+  description:
+    "Big-company tech. Small-business prices. Real human support. Waji Professional Websites for local businesses + HIPAA compliance and healthcare IT for Minnesota providers.",
+  keywords: [
+    "Minnesota tech consulting",
+    "HIPAA compliance Minneapolis",
+    "affordable websites small business",
+    "fractional Security Officer",
+    "Waji websites",
+    "healthcare IT Minnesota",
+  ],
   openGraph: {
-    title: "Arsi Technology Group | Big-company tech. Small-business prices. Real human support.",
-    description: "Two service routes — Waji Professional Websites for local businesses, and HIPAA + Healthcare IT for Minnesota providers.",
-    url: "https://arsitechgroup.com",
-    siteName: "Arsi Technology Group LLC",
-    locale: "en_US",
+    title: "Arsi Technology Group",
+    description: "Big-company tech. Small-business prices. Real human support.",
     type: "website",
   },
 };

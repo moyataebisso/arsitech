@@ -2,11 +2,11 @@ import { Metadata } from "next";
 import { MapPinIcon, PhoneIcon, EnvelopeIcon, ClockIcon, CheckCircleIcon } from "@heroicons/react/24/outline";
 import ContactForm from "@/components/ContactForm";
 import AnimatedSection from "@/components/AnimatedSection";
-import { COMPANY } from "@/lib/constants";
+import { COMPANY, HIPAA_SERVICE_INTEREST } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Contact Us | Arsi Technology Group",
-  description: "Get in touch with Arsi Technology Group. Schedule a free consultation for software development, IT consulting, or HIPAA compliance services.",
+  description: "Get in touch with Arsi Technology Group. Schedule a free consultation for a Waji website, HIPAA compliance, or general IT support.",
 };
 
 const expectations = [
@@ -16,7 +16,13 @@ const expectations = [
   "You'll receive a customized proposal",
 ];
 
-export default function ContactPage() {
+export default async function ContactPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ service?: string }>;
+}) {
+  const { service } = await searchParams;
+  const defaultService = service === "hipaa" ? HIPAA_SERVICE_INTEREST : "";
   return (
     <>
       {/* Hero Section */}
@@ -65,7 +71,7 @@ export default function ContactPage() {
                   Tell us about your business and technology needs. We&apos;ll get back to you within 24 hours.
                 </p>
                 <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10">
-                  <ContactForm />
+                  <ContactForm defaultService={defaultService} />
                 </div>
               </div>
             </AnimatedSection>
