@@ -39,14 +39,13 @@ export default function HeroSection() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
         <div className="max-w-3xl">
           {/* Slogan headline */}
-          <h1 className="font-bold text-white leading-[1.05] mb-8 animate-fade-in-up opacity-0" style={{ animationDelay: '0.3s', animationFillMode: 'forwards' }}>
-            <span className="block text-5xl md:text-6xl lg:text-7xl">Big-company tech.</span>
-            <span className="block text-5xl md:text-6xl lg:text-7xl text-gradient-animate mt-1">
-              Small-business prices.
-            </span>
-            <span className="block text-2xl md:text-3xl lg:text-4xl text-gray-400 font-medium mt-4">
-              Real human support.
-            </span>
+          <h1
+            className="font-bold text-white leading-[1.1] mb-8 text-4xl md:text-5xl lg:text-6xl animate-fade-in-up opacity-0"
+            style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}
+          >
+            Making{" "}
+            <span className="text-gradient-animate">expensive tech services</span>{" "}
+            affordable for small businesses.
           </h1>
 
           {/* Subheadline */}

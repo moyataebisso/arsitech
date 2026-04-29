@@ -7,7 +7,7 @@ import { ABOUT_VALUES, CORE_VALUES, FOUNDER_EDUCATION, FOUNDER_SKILLS, COMPANY }
 export const metadata: Metadata = {
   title: "About | Arsi Technology Group — Tech that fits your size and your budget",
   description:
-    "Big-company tech. Small-business prices. Real human support. Minneapolis-based, Minnesota-focused — built for the small and local end of the market with HIPAA Healthcare as our flagship specialty.",
+    "Making expensive tech services affordable for small businesses. Minneapolis-based, Minnesota-focused — built for the small and local end of the market with HIPAA Healthcare as our flagship specialty.",
 };
 
 const HOW_WE_WORK = [
@@ -52,8 +52,7 @@ export default function AboutPage() {
               and your budget.
             </h1>
             <p className="text-xl md:text-2xl italic text-gray-200">
-              Big-company tech. <span className="text-accent not-italic font-semibold">Small-business prices.</span>{" "}
-              <span className="text-gray-400">Real human support.</span>
+              Making <span className="text-accent not-italic font-semibold">expensive tech services</span> affordable for small businesses.
             </p>
           </AnimatedSection>
         </div>
@@ -301,7 +300,7 @@ export default function AboutPage() {
                 Meet the Founder
               </h1>
               <p className="text-xl text-accent italic font-medium mb-3">
-                Big-company tech. Small-business prices. Real human support.
+                Making expensive tech services affordable for small businesses.
               </p>
               <p className="text-lg text-gray-300">
                 M.S. Engineering Graduate | Power Systems Engineer | Technology Consultant

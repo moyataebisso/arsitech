@@ -14,14 +14,14 @@ export default function TwoRoutesSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="max-w-3xl mx-auto text-center mb-14">
-          <span className="inline-block text-sm font-semibold tracking-widest text-accent uppercase mb-3">
-            Two Service Routes
+          <span className="inline-block text-sm font-semibold tracking-widest text-text-muted uppercase mb-3">
+            What We Offer
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4 leading-tight">
-            One company. Two clear paths.
+            Two services. One company.
           </h2>
           <p className="text-lg text-text-light leading-relaxed">
-            Whether you run a local restaurant or a healthcare clinic, we&apos;ve built a route designed for you — with pricing and service that actually fits.
+            We help small businesses with two things: building professional websites, and handling HIPAA compliance for healthcare providers. Most clients use one or the other. Some use both.
           </p>
         </div>
 
@@ -56,8 +56,8 @@ export default function TwoRoutesSection() {
               {[
                 "Custom design + AI-generated copy in your voice",
                 "Hosting, security, and updates included",
-                "Real human support — text us anytime",
-                "Setup from $299, monthly from $199",
+                "Direct support — text us anytime",
+                "How it works: discovery call → design → preview → launch (about 1–2 weeks from start to live site)",
               ].map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <span className="flex-shrink-0 w-5 h-5 mt-0.5 rounded-full bg-highlight/20 flex items-center justify-center">
@@ -121,8 +121,8 @@ export default function TwoRoutesSection() {
                 {[
                   "Designated HIPAA Security Officer (45 CFR § 164.308(a)(2))",
                   "Bi-weekly password reviews + annual risk analysis",
-                  "Bundled website + compliance from $400/mo all-inclusive",
-                  "Built for organizations under 20 employees",
+                  "Built specifically for organizations under 20 employees",
+                  "How it works: consultation → custom proposal → signed BAA → ongoing partnership (typically 1–2 weeks to start)",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <span className="flex-shrink-0 w-5 h-5 mt-0.5 rounded-full bg-accent/20 flex items-center justify-center">
@@ -148,7 +148,7 @@ export default function TwoRoutesSection() {
 
               {/* Footnote */}
               <p className="text-xs text-gray-400 italic mt-4">
-                Healthcare-specific pricing — see Services page
+                Full healthcare details on the Services page
               </p>
             </div>
           </article>

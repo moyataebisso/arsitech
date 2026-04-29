@@ -20,7 +20,7 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: "Arsi Technology Group | Affordable Tech for Minnesota Businesses",
   description:
-    "Big-company tech. Small-business prices. Real human support. Waji Professional Websites for local businesses + HIPAA compliance and healthcare IT for Minnesota providers.",
+    "Making expensive tech services affordable for small businesses. Waji Professional Websites for local businesses + HIPAA compliance and healthcare IT for Minnesota providers.",
   keywords: [
     "Minnesota tech consulting",
     "HIPAA compliance Minneapolis",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "Arsi Technology Group",
-    description: "Big-company tech. Small-business prices. Real human support.",
+    description: "Making expensive tech services affordable for small businesses.",
     type: "website",
   },
 };
