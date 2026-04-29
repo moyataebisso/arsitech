@@ -215,7 +215,10 @@ export default function AboutPage() {
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
                 Meet the Founder
               </h1>
-              <p className="text-xl text-gray-300">
+              <p className="text-xl text-accent italic font-medium mb-3">
+                Big-company tech. Small-business prices. Real human support.
+              </p>
+              <p className="text-lg text-gray-300">
                 M.S. Engineering Graduate | Power Systems Engineer | Technology Consultant
               </p>
             </div>

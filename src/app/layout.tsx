@@ -18,13 +18,13 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Technology & Consulting Services | Arsi Technology Group LLC",
-  description: "Your complete technology partner. Custom software development, IT consulting, HIPAA compliance, and security services for businesses of all sizes.",
-  keywords: "technology consulting, software development, IT services, HIPAA compliance, security, Minnesota, cloud infrastructure, Microsoft 365",
+  title: "Arsi Technology Group | Big-company tech. Small-business prices. Real human support.",
+  description: "Big-company tech. Small-business prices. Real human support. Arsi Technology Group helps Minnesota businesses with websites, hosting, HIPAA compliance, and fractional IT — at prices designed for small and local owners.",
+  keywords: "Minnesota websites, small business IT, HIPAA compliance, fractional security officer, Waji websites, healthcare IT, technology consulting, Twin Cities",
   openGraph: {
-    title: "Technology & Consulting Services | Arsi Technology Group LLC",
-    description: "Custom software, IT consulting, HIPAA compliance, and security services for businesses.",
-    url: "https://arsitech.com",
+    title: "Arsi Technology Group | Big-company tech. Small-business prices. Real human support.",
+    description: "Two service routes — Waji Professional Websites for local businesses, and HIPAA + Healthcare IT for Minnesota providers.",
+    url: "https://arsitechgroup.com",
     siteName: "Arsi Technology Group LLC",
     locale: "en_US",
     type: "website",

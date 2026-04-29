@@ -248,8 +248,22 @@ export const FAQS = [
   },
 ];
 
-export const NAV_LINKS = [
-  { label: "Services", href: "/services" },
+export type NavLink = {
+  label: string;
+  href: string;
+  external?: boolean;
+  children?: NavLink[];
+};
+
+export const NAV_LINKS: NavLink[] = [
+  {
+    label: "Services",
+    href: "/services",
+    children: [
+      { label: "Waji Websites", href: "https://cimaasites.ai", external: true },
+      { label: "HIPAA & Healthcare IT", href: "/services#hipaa-compliance" },
+    ],
+  },
   { label: "Portfolio", href: "/portfolio" },
   { label: "About", href: "/about" },
   { label: "Careers", href: "/careers" },

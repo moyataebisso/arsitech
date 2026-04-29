@@ -21,6 +21,9 @@ export default function Footer() {
                 ARSI <span className="text-accent">TECHNOLOGY GROUP</span>
               </span>
             </Link>
+            <p className="text-gray-300 text-sm italic mb-3">
+              Big-company tech. Small-business prices. Real human support.
+            </p>
             <p className="text-gray-400 text-sm mb-4">
               {COMPANY.tagline}
             </p>
