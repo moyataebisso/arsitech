@@ -54,7 +54,7 @@ export default function TwoRoutesSection() {
             {/* Bullets */}
             <ul className="space-y-3 mb-8 flex-grow">
               {[
-                "Custom design + AI-generated copy in your voice",
+                "Custom design + copy written in your brand voice",
                 "Hosting, security, and updates included",
                 "Direct support — text us anytime",
                 "How it works: discovery call → design → preview → launch (about 1–2 weeks from start to live site)",
