@@ -102,7 +102,7 @@ const BUDGET_TABLE: { req: string; enterprise: string; small: string }[] = [
   {
     req: "Encrypted email",
     enterprise: "Microsoft Purview",
-    small: "Proton Mail Plus or Hushmail (about $5–10/mo)",
+    small: "Proton Mail Plus or Hushmail (small monthly fee)",
   },
   {
     req: "Strong passwords + MFA",
@@ -117,7 +117,7 @@ const BUDGET_TABLE: { req: string; enterprise: string; small: string }[] = [
   {
     req: "Encrypted backup",
     enterprise: "Azure Backup",
-    small: "iDrive or Backblaze (about $7–9/mo)",
+    small: "iDrive or Backblaze (small monthly fee)",
   },
   {
     req: "Antivirus",
@@ -126,7 +126,7 @@ const BUDGET_TABLE: { req: string; enterprise: string; small: string }[] = [
   },
   {
     req: "Risk analysis",
-    enterprise: "Big consultancy ($5–25K)",
+    enterprise: "Big consultancy (high project fee)",
     small: "Free HHS SRA Tool with guidance",
   },
   {
@@ -136,12 +136,12 @@ const BUDGET_TABLE: { req: string; enterprise: string; small: string }[] = [
   },
   {
     req: "Designated Security Officer",
-    enterprise: "Full-time hire ($60–95K/year)",
-    small: "Fractional Security Officer ($400–800/mo)",
+    enterprise: "Full-time hire (annual salary commitment)",
+    small: "Fractional Security Officer",
   },
   {
     req: "Documented policies",
-    enterprise: "Custom legal ($5–15K)",
+    enterprise: "Custom legal (high project fee)",
     small: "HHS sample templates customized",
   },
 ];
@@ -421,7 +421,7 @@ export default function HipaaExplainedPage() {
 
           <div className="mt-8 bg-white rounded-xl p-6 border-l-4 border-success">
             <p className="text-text-dark leading-relaxed">
-              <strong>Total ongoing tooling cost: $20–30/month.</strong> Plus a fractional Security Officer like Arsi Technology Group at $400–800/month. Total real cost of compliance for a small group home: <strong>$420–830/month.</strong> Compare that to the cost of one breach (covered later on this page) and the math is clear.
+              For a small group home, ongoing tooling can be free or near-free, and a fractional Security Officer costs a small fraction of a full-time hire. Whatever the total ends up being, it&apos;s a small fraction of the cost of one breach (covered later on this page).
             </p>
           </div>
         </div>
@@ -470,7 +470,7 @@ export default function HipaaExplainedPage() {
                 Category 3: Willful neglect — fraud or ignoring obvious risks
               </h4>
               <p className="text-text-dark leading-relaxed">
-                Example: selling PHI to data brokers, refusing to implement basic security despite knowing about it, or faking compliance records. Maximum penalties apply ($63,973 to $2,134,831 per violation). Department of Justice may pursue criminal charges in extreme cases. This is rare and avoidable. Working with a proper Security Officer who flags issues prevents this category entirely.
+                Example: selling PHI to data brokers, refusing to implement basic security despite knowing about it, or faking compliance records. Maximum statutory penalties apply (six- to seven-figure range per violation). Department of Justice may pursue criminal charges in extreme cases. This is rare and avoidable. Working with a proper Security Officer who flags issues prevents this category entirely.
               </p>
             </div>
           </div>
@@ -571,7 +571,7 @@ export default function HipaaExplainedPage() {
 
           <div className="bg-light-accent border-l-4 border-accent rounded-r-lg p-6">
             <p className="text-text-dark leading-relaxed">
-              <strong>This is the math that matters:</strong> you are not paying for compliance to prevent the 3–7% chance of investigation. You are paying for compliance to ensure that IF something happens (and over a 10-year business lifespan, the probability climbs significantly), the outcome is a $5,000 corrective action plan instead of a $500,000 penalty.
+              <strong>This is the math that matters:</strong> you are not paying for compliance to prevent the 3–7% chance of investigation. You are paying for compliance to ensure that IF something happens (and over a 10-year business lifespan, the probability climbs significantly), the outcome is a small corrective action plan instead of a six- or seven-figure penalty.
             </p>
           </div>
         </div>
@@ -589,7 +589,7 @@ export default function HipaaExplainedPage() {
             </h2>
           </div>
           <p className="text-lg text-text-light mb-10 leading-relaxed">
-            HIPAA requires a designated Security Officer. For small providers who cannot justify a $60,000+ full-time hire, a fractional Security Officer satisfies the requirement at a fraction of the cost. Here is what the role actually involves on a day-to-day basis:
+            HIPAA requires a designated Security Officer. For small providers who cannot justify a full-time hire, a fractional Security Officer satisfies the requirement at a small fraction of the cost. Here is what the role actually involves on a day-to-day basis:
           </p>
 
           <div className="grid md:grid-cols-3 gap-6">
