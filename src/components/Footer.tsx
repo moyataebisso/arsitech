@@ -65,11 +65,24 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3 — Company */}
+          {/* Column 3 — Company + Resources */}
           <div>
             <h3 className="font-semibold text-base mb-4 text-white">Company</h3>
-            <ul className="space-y-3">
+            <ul className="space-y-3 mb-6">
               {FOOTER_LINKS.company.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-gray-400 hover:text-white transition-colors text-sm"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <h3 className="font-semibold text-base mb-4 text-white">Resources</h3>
+            <ul className="space-y-3">
+              {FOOTER_LINKS.resources.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}

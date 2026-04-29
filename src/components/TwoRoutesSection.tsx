@@ -135,6 +135,14 @@ export default function TwoRoutesSection() {
                 ))}
               </ul>
 
+              {/* Educational link */}
+              <Link
+                href="/hipaa-explained"
+                className="inline-flex items-center text-sm text-cyan hover:text-white transition-colors mb-4 underline-offset-4 hover:underline"
+              >
+                New to HIPAA? Read our plain-English guide →
+              </Link>
+
               {/* CTA */}
               <Link
                 href="/services#healthcare"

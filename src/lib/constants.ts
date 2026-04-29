@@ -264,6 +264,7 @@ export const NAV_LINKS: NavLink[] = [
       { label: "HIPAA & Healthcare IT", href: "/services#healthcare" },
     ],
   },
+  { label: "HIPAA Explained", href: "/hipaa-explained" },
   { label: "Portfolio", href: "/portfolio" },
   { label: "About", href: "/about" },
   { label: "Careers", href: "/careers" },
@@ -282,6 +283,9 @@ export const FOOTER_LINKS = {
     { label: "HIPAA Compliance", href: "/services#healthcare" },
     { label: "Healthcare IT", href: "/services#healthcare" },
     { label: "IT Consulting", href: "/services" },
+  ],
+  resources: [
+    { label: "HIPAA Explained", href: "/hipaa-explained" },
   ],
   legal: [
     { label: "Privacy Policy", href: "/privacy-policy" },

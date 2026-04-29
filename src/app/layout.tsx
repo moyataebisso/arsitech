@@ -28,6 +28,10 @@ export const metadata: Metadata = {
     "fractional Security Officer",
     "Waji websites",
     "healthcare IT Minnesota",
+    "HIPAA compliance small business",
+    "affordable HIPAA Minnesota",
+    "HIPAA Security Officer Minnesota",
+    "HIPAA group home Minnesota",
   ],
   openGraph: {
     title: "Arsi Technology Group",
