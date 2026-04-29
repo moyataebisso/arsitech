@@ -13,7 +13,12 @@
       "Bash(git push:*)",
       "Bash(dir \"C:\\\\Users\\\\ebiss\\\\OneDrive\\\\Pictures\\\\Screenshots\" /b)",
       "Bash(findstr:*)",
-      "Bash(node scripts/upload-logos.js:*)"
+      "Bash(node scripts/upload-logos.js:*)",
+      "Bash(find /c/Users/ebiss/Projects/arsitech -name tailwind.config.*)",
+      "Bash(ls -la /c/Users/ebiss/Projects/arsitech/.env*)",
+      "Bash(node -e \"try { require.resolve\\(''resend''\\); console.log\\(''resend: installed''\\); } catch { console.log\\(''resend: NOT installed''\\); }\")",
+      "Bash(node -e \"try { require.resolve\\(''nodemailer''\\); console.log\\(''nodemailer: installed''\\); } catch { console.log\\(''nodemailer: NOT installed''\\); }\")",
+      "PowerShell(Get-NetTCPConnection *)"
     ]
   }
 }
