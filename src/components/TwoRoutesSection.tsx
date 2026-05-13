@@ -72,7 +72,7 @@ export default function TwoRoutesSection() {
 
             {/* CTA */}
             <a
-              href="https://cimaasites.ai"
+              href="https://wajiiwebsites.com"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center w-full sm:w-auto bg-highlight hover:bg-amber-600 text-white px-6 py-3.5 rounded-xl font-semibold transition-all duration-300 group-hover:shadow-lg group-hover:shadow-highlight/30"

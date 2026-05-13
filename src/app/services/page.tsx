@@ -247,18 +247,18 @@ export default function ServicesPage() {
               <p className="text-sm text-text-muted italic">
                 Waji is the customer-facing brand for our website services. Visit{" "}
                 <a
-                  href="https://cimaasites.ai"
+                  href="https://wajiiwebsites.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-accent underline hover:text-accent-dark"
                 >
-                  cimaasites.ai
+                  wajiiwebsites.com
                 </a>{" "}
                 for the full offering.
               </p>
               <div className="mt-6">
                 <a
-                  href="https://cimaasites.ai"
+                  href="https://wajiiwebsites.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center bg-highlight hover:bg-amber-600 text-white px-6 py-3 rounded-xl font-semibold transition-colors"
@@ -307,7 +307,7 @@ export default function ServicesPage() {
                   </ul>
 
                   <a
-                    href="https://cimaasites.ai/contact"
+                    href="https://wajiiwebsites.com/contact"
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`inline-flex items-center justify-center w-full px-5 py-2.5 rounded-lg font-semibold transition-colors ${
