@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { PublicShell } from "@/components/PublicShell";
+import { BorderLight } from "@/components/BorderLight";
 
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
@@ -57,6 +58,7 @@ export default function RootLayout({
         <PublicShell>
           {children}
         </PublicShell>
+        <BorderLight />
       </body>
     </html>
   );
