@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { MapPinIcon, PhoneIcon, EnvelopeIcon, ClockIcon, CheckCircleIcon } from "@heroicons/react/24/outline";
+import { MapPinIcon, EnvelopeIcon, ClockIcon, CheckCircleIcon } from "@heroicons/react/24/outline";
 import ContactForm from "@/components/ContactForm";
 import AnimatedSection from "@/components/AnimatedSection";
 import { COMPANY, HIPAA_SERVICE_INTEREST } from "@/lib/constants";
@@ -93,21 +93,6 @@ export default async function ContactPage({
                         className="text-accent hover:text-cyan transition-colors"
                       >
                         {COMPANY.email}
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start group">
-                    <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center flex-shrink-0 group-hover:bg-accent transition-colors">
-                      <PhoneIcon className="h-6 w-6 text-accent group-hover:text-white transition-colors" />
-                    </div>
-                    <div className="ml-4">
-                      <h3 className="font-semibold text-white">Phone</h3>
-                      <a
-                        href={`tel:${COMPANY.phone.replace(/[^0-9]/g, "")}`}
-                        className="text-accent hover:text-cyan transition-colors"
-                      >
-                        {COMPANY.phone}
                       </a>
                     </div>
                   </div>

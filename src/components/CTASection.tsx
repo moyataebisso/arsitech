@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { COMPANY } from "@/lib/constants";
 import AnimatedSection from "./AnimatedSection";
 
 interface CTASectionProps {
@@ -9,7 +8,6 @@ interface CTASectionProps {
   subtext?: string;
   buttonText?: string;
   buttonLink?: string;
-  showPhone?: boolean;
 }
 
 export default function CTASection({
@@ -17,7 +15,6 @@ export default function CTASection({
   subtext = "Schedule a free consultation to discuss how we can help your business grow.",
   buttonText = "Get a Free Consultation",
   buttonLink = "/contact",
-  showPhone = true,
 }: CTASectionProps) {
   return (
     <section className="py-20 bg-primary bg-grid-pattern relative overflow-hidden">
@@ -45,25 +42,13 @@ export default function CTASection({
         </AnimatedSection>
 
         <AnimatedSection animation="scale" delay={200}>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex justify-center items-center">
             <Link
               href={buttonLink}
               className="inline-flex items-center justify-center bg-accent hover:bg-accent-dark text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:shadow-lg hover:shadow-accent/30 btn-glow hover:scale-105"
             >
               {buttonText}
             </Link>
-
-            {showPhone && (
-              <span className="text-gray-400">
-                Or call us:{" "}
-                <a
-                  href={`tel:${COMPANY.phone.replace(/[^0-9]/g, "")}`}
-                  className="text-white hover:text-accent transition-colors font-medium underline-animate"
-                >
-                  {COMPANY.phone}
-                </a>
-              </span>
-            )}
           </div>
         </AnimatedSection>
       </div>

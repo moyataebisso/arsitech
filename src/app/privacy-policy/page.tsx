@@ -124,16 +124,10 @@ export default function PrivacyPolicyPage() {
                 <strong>{COMPANY.legalName}</strong>
               </p>
               <p className="text-text-dark mb-2">{COMPANY.location}</p>
-              <p className="text-text-dark mb-2">
+              <p className="text-text-dark">
                 Email:{" "}
                 <a href={`mailto:${COMPANY.email}`} className="text-accent hover:text-primary">
                   {COMPANY.email}
-                </a>
-              </p>
-              <p className="text-text-dark">
-                Phone:{" "}
-                <a href={`tel:${COMPANY.phone.replace(/[^0-9]/g, "")}`} className="text-accent hover:text-primary">
-                  {COMPANY.phone}
                 </a>
               </p>
             </div>

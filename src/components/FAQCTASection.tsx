@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
-import { COMPANY } from "@/lib/constants";
 import AnimatedSection from "./AnimatedSection";
 
 const faqs = [
@@ -127,20 +126,10 @@ export default function FAQCTASection() {
 
                   <Link
                     href="/contact"
-                    className="inline-flex items-center justify-center bg-white text-accent hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:shadow-lg hover:scale-105 mb-6 w-full sm:w-auto"
+                    className="inline-flex items-center justify-center bg-white text-accent hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:shadow-lg hover:scale-105 w-full sm:w-auto"
                   >
                     Get a Free Consultation
                   </Link>
-
-                  <div className="pt-6 border-t border-white/20">
-                    <p className="text-white/70 mb-2">Or call us directly:</p>
-                    <a
-                      href={`tel:${COMPANY.phone.replace(/[^0-9]/g, "")}`}
-                      className="text-2xl font-bold text-white hover:text-highlight transition-colors"
-                    >
-                      {COMPANY.phone}
-                    </a>
-                  </div>
                 </div>
               </div>
             </AnimatedSection>

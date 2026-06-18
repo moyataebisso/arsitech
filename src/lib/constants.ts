@@ -4,7 +4,6 @@ export const COMPANY = {
   tagline: "Your Complete Technology Partner for Business Success",
   description: "We help businesses solve any technology challenge — from custom software development to IT infrastructure, security compliance, and HIPAA certification.",
   location: "Minnesota",
-  phone: "(763) 639-3746",
   email: "arsitechgroup@gmail.com",
   founded: "2024",
   linkedin: "https://www.linkedin.com/in/moyata-ebisso",
@@ -13,10 +12,9 @@ export const COMPANY = {
     title: "Founder & Lead Engineer",
     credentials: "M.S. in Electrical & Computer Engineering",
     email: "arsitechgroup@gmail.com",
-    phone: "(763) 639-3746",
     linkedin: "https://www.linkedin.com/in/moyata-ebisso",
   },
-  mission: "We focus on affordable tech for local businesses — websites, hosting, and fractional IT — with HIPAA Healthcare as our flagship specialty. One bundled monthly fee. One human to call. Small operators get enterprise-quality tech without the enterprise bill.",
+  mission: "We focus on affordable tech for local businesses — websites, hosting, and fractional IT — with HIPAA Healthcare as our flagship specialty. One bundled monthly fee. One human to contact. Small operators get enterprise-quality tech without the enterprise bill.",
   vision: "To be Minnesota's go-to technology partner for small and local businesses — restaurants, group homes, clinics, transport companies, nonprofits — known for clear pricing, real human support, and honest scope.",
 };
 
@@ -158,7 +156,7 @@ export const SECURITY_OFFICER_DETAILS = {
     "Quarterly security reviews & risk assessments",
     "Policy updates when regulations change",
     "Compliance monitoring & alerts",
-    "Direct phone/email access for questions",
+    "Direct email access for questions",
     "Incident response guidance",
     "Annual training refreshers",
     "Audit preparation support",

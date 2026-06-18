@@ -63,7 +63,7 @@ export async function POST(request: NextRequest) {
           <li><strong>Business:</strong> ${businessName}</li>
           <li><strong>Service Interest:</strong> ${serviceInterest || "General inquiry"}</li>
         </ul>
-        <p>In the meantime, feel free to call us at <strong>(763) 639-3746</strong> if you have any urgent questions.</p>
+        <p>If you have any urgent questions in the meantime, just reply to this email and we'll get back to you as soon as we can.</p>
         <p>Best regards,<br />Moyata Ebisso<br />Arsi Technology Group</p>
         <hr />
         <p style="color: #666; font-size: 12px;">Minnesota-Based Technology Consulting</p>

@@ -143,7 +143,7 @@ const WHY_US = [
     icon: PhoneIcon,
     title: "One Bill, One Contact",
     body:
-      "Website, hosting, Security Officer, and ongoing reviews — one monthly fee, one human to call when something goes wrong.",
+      "Website, hosting, Security Officer, and ongoing reviews — one monthly fee, one human to contact when something goes wrong.",
   },
   {
     icon: StarIcon,
