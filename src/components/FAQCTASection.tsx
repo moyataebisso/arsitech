@@ -1,26 +1,29 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
-import { ChevronDownIcon } from "@heroicons/react/24/outline";
+import { ChevronDownIcon, ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
 import AnimatedSection from "./AnimatedSection";
 
 const faqs = [
   {
-    question: "What types of businesses do you work with?",
-    answer: "We work with businesses of all sizes, from startups to established companies. Our clients include healthcare practices, professional services firms, retail businesses, and more. If you have a technology challenge, we can help.",
+    question: "What does Arsi Technology Group actually do?",
+    answer:
+      "We run two service lines under one LLC: Wajii Websites (done-for-you custom websites for small businesses, starting at $99/mo) and Arsi Tech Compliance (fractional HIPAA Security Officer services for Minnesota healthcare providers, starting at $750/mo).",
   },
   {
-    question: "Do you offer HIPAA compliance services?",
-    answer: "Yes! HIPAA compliance is one of our specialties. We offer comprehensive HIPAA compliance setup in as little as 4 business days, including risk assessment, policy documentation, security configuration, and audit-ready documentation. Pricing varies based on the number of computers and practice size — contact us for a quote.",
+    question: "Do I need a website or compliance services?",
+    answer:
+      "Many of our clients need both — especially home care agencies and assisted living facilities who need a professional site AND HIPAA compliance. We can handle both under one engagement.",
   },
   {
-    question: "Can you build custom software for my business?",
-    answer: "Absolutely. We develop custom web applications, internal tools, automation solutions, and integrations tailored to your specific business needs. We'll work with you to understand your requirements and deliver a solution that drives real results.",
+    question: "How is this different from hiring an agency?",
+    answer:
+      "Traditional agencies charge $5,000–$15,000 to build a site and $150–$250/hr for ongoing work. We charge a flat monthly rate and you deal with one person who knows your business.",
   },
   {
-    question: "Do you provide ongoing IT support?",
-    answer: "Yes, we offer flexible support options including help desk services, managed IT, and on-demand consulting. We can serve as your complete IT department or supplement your existing team.",
+    question: "Where are you based?",
+    answer:
+      "Minneapolis, Minnesota. We serve clients statewide and remotely.",
   },
 ];
 
@@ -117,19 +120,43 @@ export default function FAQCTASection() {
                 <div className="absolute bottom-5 right-5 w-20 h-20 bg-white/10 rounded-full animate-blob delay-300" />
 
                 <div className="relative z-10">
-                  <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                    Ready to Solve Your Technology Challenges?
+                  <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
+                    Ready to get started?
                   </h2>
                   <p className="text-lg text-white/80 mb-8">
-                    Schedule a free consultation to discuss how we can help your business grow.
+                    Free consultation — no pressure, no obligation.
                   </p>
 
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center justify-center bg-white text-accent hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:shadow-lg hover:scale-105 w-full sm:w-auto"
-                  >
-                    Get a Free Consultation
-                  </Link>
+                  <div className="flex flex-col gap-3">
+                    <a
+                      href="https://wajiiwebsites.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center bg-white text-accent hover:bg-gray-100 px-6 py-3.5 rounded-lg font-semibold text-base md:text-lg transition-all duration-300 hover:shadow-lg hover:scale-[1.02]"
+                    >
+                      Get a Website
+                      <ArrowTopRightOnSquareIcon className="w-4 h-4 ml-2" />
+                    </a>
+                    <a
+                      href="mailto:arsitechgroup@gmail.com"
+                      className="inline-flex items-center justify-center bg-primary/40 hover:bg-primary/60 text-white border-2 border-white/40 hover:border-white/60 px-6 py-3.5 rounded-lg font-semibold text-base md:text-lg transition-all duration-300 hover:shadow-lg hover:scale-[1.02]"
+                    >
+                      Talk Compliance
+                      <svg
+                        className="w-4 h-4 ml-2"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M17 8l4 4m0 0l-4 4m4-4H3"
+                        />
+                      </svg>
+                    </a>
+                  </div>
                 </div>
               </div>
             </AnimatedSection>

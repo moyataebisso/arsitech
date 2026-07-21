@@ -1,49 +1,51 @@
 "use client";
 
-import Link from "next/link";
-import { ArrowRightIcon } from "@heroicons/react/24/outline";
+import { ArrowTopRightOnSquareIcon, MapPinIcon } from "@heroicons/react/24/outline";
 import AnimatedSection from "./AnimatedSection";
-import ClientCarousel from "./ClientCarousel";
 
-// Client data with Supabase storage logo URLs
-const clients = [
+type Project = {
+  name: string;
+  type: string;
+  location: string;
+  url: string;
+  division: "Wajii Websites" | "Arsi Tech Compliance" | "Both Divisions";
+};
+
+const projects: Project[] = [
   {
-    name: "ODDA Platform",
-    industry: "Education",
-    logo: "https://abhpzepanwhuswhiuutu.supabase.co/storage/v1/object/public/logos/odda-logo.png",
-    url: "https://oromo-platform.vercel.app",
+    name: "El Roi Health Services",
+    type: "Home Care Agency Website",
+    location: "Minneapolis, MN",
+    url: "https://elroihealthservices.com",
+    division: "Wajii Websites",
+  },
+  {
+    name: "Entrusted Care Residence",
+    type: "Assisted Living Website + HIPAA Compliance",
+    location: "Saint Paul, MN",
+    url: "https://entrustedhomehealthcare.org",
+    division: "Both Divisions",
   },
   {
     name: "CareConnect Live",
-    industry: "Healthcare",
-    logo: "https://abhpzepanwhuswhiuutu.supabase.co/storage/v1/object/public/logos/careconnect-logo.png",
-    url: "https://careconnectlive.com",
-  },
-  {
-    name: "SaveYours",
-    industry: "CPR Training",
-    logo: "https://abhpzepanwhuswhiuutu.supabase.co/storage/v1/object/public/logos/saveyours-logo.png",
-    url: "https://saveyours.org",
-  },
-  {
-    name: "Entrusted Home Healthcare",
-    industry: "Home Healthcare",
-    logo: "https://abhpzepanwhuswhiuutu.supabase.co/storage/v1/object/public/logos/entrusted-logo.png",
-    url: "https://entrustedhomehealthcare.com",
-  },
-  {
-    name: "Rift Valley Transportation",
-    industry: "Transportation",
-    logo: "https://abhpzepanwhuswhiuutu.supabase.co/storage/v1/object/public/logos/riftvalley-logo.png",
-    url: "https://riftvalleytransportation.com",
-  },
-  {
-    name: "INDSVE",
-    industry: "Fashion / E-commerce",
-    logo: "https://abhpzepanwhuswhiuutu.supabase.co/storage/v1/object/public/logos/indsve-logo.png",
-    url: "https://indsve.com",
+    type: "245D Provider Marketplace",
+    location: "Minnesota Statewide",
+    url: "https://careconnectlive.org",
+    division: "Wajii Websites",
   },
 ];
+
+function divisionBadgeClasses(division: Project["division"]) {
+  switch (division) {
+    case "Wajii Websites":
+      return "bg-accent/20 text-accent border border-accent/30";
+    case "Arsi Tech Compliance":
+      return "bg-cyan/20 text-cyan border border-cyan/30";
+    case "Both Divisions":
+    default:
+      return "bg-highlight/20 text-highlight border border-highlight/30";
+  }
+}
 
 export default function PortfolioPreview() {
   return (
@@ -65,25 +67,55 @@ export default function PortfolioPreview() {
             Trusted By Minnesota Businesses
           </h2>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            From healthcare platforms to business technology solutions, we deliver results
+            Real clients. Real websites. Real HIPAA programs — live and running today.
           </p>
         </AnimatedSection>
 
-        {/* Client Carousel */}
-        <AnimatedSection animation="fade-up" delay={200} className="mb-12 px-8">
-          <ClientCarousel clients={clients} />
-        </AnimatedSection>
+        {/* Project cards */}
+        <div className="grid md:grid-cols-3 gap-6">
+          {projects.map((project, index) => (
+            <AnimatedSection
+              key={project.name}
+              animation="fade-up"
+              delay={index * 120}
+            >
+              <article className="h-full flex flex-col bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-7 border border-white/10 hover:border-accent/50 hover:shadow-xl hover:shadow-accent/10 transition-all duration-300 hover:-translate-y-2">
+                <div className="flex items-start justify-between gap-3 mb-4">
+                  <span
+                    className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide ${divisionBadgeClasses(
+                      project.division
+                    )}`}
+                  >
+                    {project.division}
+                  </span>
+                </div>
 
-        {/* CTA */}
-        <AnimatedSection animation="fade-up" delay={400} className="text-center">
-          <Link
-            href="/portfolio"
-            className="inline-flex items-center text-accent font-semibold hover:text-cyan transition-colors group"
-          >
-            View Our Work
-            <ArrowRightIcon className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-2" />
-          </Link>
-        </AnimatedSection>
+                <h3 className="text-xl md:text-2xl font-bold text-white mb-2 leading-snug">
+                  {project.name}
+                </h3>
+
+                <p className="text-gray-300 text-sm mb-3 flex-grow">
+                  {project.type}
+                </p>
+
+                <div className="flex items-center gap-1.5 text-xs text-gray-400 mb-5">
+                  <MapPinIcon className="w-3.5 h-3.5" />
+                  <span>{project.location}</span>
+                </div>
+
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-accent hover:text-cyan font-semibold text-sm transition-colors self-start"
+                >
+                  View Site
+                  <ArrowTopRightOnSquareIcon className="w-4 h-4" />
+                </a>
+              </article>
+            </AnimatedSection>
+          ))}
+        </div>
       </div>
     </section>
   );

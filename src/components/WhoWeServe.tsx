@@ -1,28 +1,45 @@
 "use client";
 
-import { HeartIcon, BuildingOfficeIcon, RocketLaunchIcon, BriefcaseIcon } from "@heroicons/react/24/outline";
+import {
+  BuildingStorefrontIcon,
+  HomeModernIcon,
+  BuildingOffice2Icon,
+  HeartIcon,
+  SparklesIcon,
+  TruckIcon,
+} from "@heroicons/react/24/outline";
 import AnimatedSection from "./AnimatedSection";
 
 const audiences = [
   {
+    icon: BuildingStorefrontIcon,
+    name: "Restaurants",
+    description: "Menus, online ordering links, and a site that actually shows up on Google.",
+  },
+  {
+    icon: HomeModernIcon,
+    name: "Home Care Agencies",
+    description: "Professional site + HIPAA compliance under one monthly engagement.",
+  },
+  {
+    icon: BuildingOffice2Icon,
+    name: "Assisted Living",
+    description: "Marketing site, admissions inquiries, and full HIPAA Security Officer coverage.",
+  },
+  {
     icon: HeartIcon,
-    name: "Healthcare Practices",
-    description: "HIPAA-compliant solutions for clinics, home healthcare, dental offices, and medical practices",
+    name: "Clinics",
+    description: "Small MN clinics who need HIPAA support without a $5,000/mo IT contract.",
   },
   {
-    icon: BuildingOfficeIcon,
-    name: "Small Businesses",
-    description: "Technology solutions that scale with your growing company and streamline operations",
+    icon: SparklesIcon,
+    name: "Salons",
+    description: "Bookings, service menu, and a site that reflects the room.",
   },
   {
-    icon: RocketLaunchIcon,
-    name: "Startups",
-    description: "Build your tech foundation right from the start with scalable, secure infrastructure",
-  },
-  {
-    icon: BriefcaseIcon,
-    name: "Professional Services",
-    description: "Streamline operations for law firms, accounting practices, and consultancies",
+    icon: TruckIcon,
+    name: "Transportation Services",
+    description: "NEMT and local transport — dispatch pages, contact forms, and clean design.",
   },
 ];
 
@@ -43,15 +60,15 @@ export default function WhoWeServe() {
         {/* Section header */}
         <AnimatedSection animation="fade-up" className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Who We Work With
+            Industries we serve
           </h2>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            We partner with businesses of all sizes to solve their technology challenges and drive growth.
+            Local businesses and small healthcare providers across Minnesota — one team, two divisions.
           </p>
         </AnimatedSection>
 
         {/* Audience grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {audiences.map((audience, index) => (
             <AnimatedSection
               key={index}
