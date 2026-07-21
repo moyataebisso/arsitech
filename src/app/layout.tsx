@@ -3,6 +3,7 @@ import { Plus_Jakarta_Sans, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { PublicShell } from "@/components/PublicShell";
 import { BorderLight } from "@/components/BorderLight";
+import { ArsiJsonLd } from "@/components/ArsiJsonLd";
 
 const plusJakarta = Plus_Jakarta_Sans({
   variable: "--font-jakarta",
@@ -19,26 +20,30 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Arsi Technology Group | Affordable Tech for Minnesota Businesses",
+  metadataBase: new URL("https://arsitechgroup.com"),
+  title: {
+    default: "Arsi Technology Group LLC — Minnesota Tech & HIPAA Compliance",
+    template: "%s | Arsi Technology Group",
+  },
   description:
-    "Making expensive tech services affordable for small businesses. Waji Professional Websites for local businesses + HIPAA compliance and healthcare IT for Minnesota providers.",
+    "Arsi Technology Group LLC provides done-for-you websites (Wajii Websites) and HIPAA compliance consulting for Minnesota healthcare providers. Minneapolis, MN.",
   keywords: [
-    "Minnesota tech consulting",
-    "HIPAA compliance Minneapolis",
-    "affordable websites small business",
-    "fractional Security Officer",
-    "Waji websites",
-    "healthcare IT Minnesota",
-    "HIPAA compliance small business",
-    "affordable HIPAA Minnesota",
-    "HIPAA Security Officer Minnesota",
-    "HIPAA group home Minnesota",
+    "HIPAA compliance Minnesota",
+    "managed website service",
+    "fractional HIPAA security officer",
+    "home care agency compliance MN",
+    "Arsi Technology Group",
   ],
   openGraph: {
-    title: "Arsi Technology Group",
-    description: "Making expensive tech services affordable for small businesses.",
+    title: "Arsi Technology Group LLC",
+    description:
+      "Done-for-you websites and HIPAA compliance for MN businesses",
+    url: "https://arsitechgroup.com",
+    siteName: "Arsi Technology Group",
+    locale: "en_US",
     type: "website",
   },
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({
@@ -59,6 +64,7 @@ export default function RootLayout({
           {children}
         </PublicShell>
         <BorderLight />
+        <ArsiJsonLd />
       </body>
     </html>
   );

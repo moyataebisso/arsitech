@@ -38,28 +38,37 @@ export default function HeroSection() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
         <div className="max-w-3xl">
-          {/* Slogan headline */}
+          {/* Headline */}
           <h1
-            className="font-bold text-white leading-[1.1] mb-8 text-4xl md:text-5xl lg:text-6xl animate-fade-in-up opacity-0"
+            className="font-bold text-white leading-[1.1] mb-6 text-4xl md:text-5xl lg:text-6xl animate-fade-in-up opacity-0"
             style={{ animationDelay: "0.3s", animationFillMode: "forwards" }}
           >
-            Making{" "}
-            <span className="text-gradient-animate">expensive tech services</span>{" "}
-            affordable for small businesses.
+            <span className="text-gradient-animate">Arsi Technology Group LLC</span>
           </h1>
 
           {/* Subheadline */}
-          <p className="text-lg md:text-xl text-gray-300 mb-10 leading-relaxed max-w-2xl animate-fade-in-up opacity-0" style={{ animationDelay: '0.5s', animationFillMode: 'forwards' }}>
-            Arsi Technology Group helps Minnesota businesses get the tech infrastructure they need — websites, hosting, HIPAA compliance, and fractional IT — at prices designed for small and local owners.
+          <p
+            className="text-xl md:text-2xl text-white/90 font-semibold mb-6 leading-snug max-w-2xl animate-fade-in-up opacity-0"
+            style={{ animationDelay: "0.4s", animationFillMode: "forwards" }}
+          >
+            Big-company tech. Small-business prices. Real human support.
+          </p>
+
+          {/* Body */}
+          <p
+            className="text-lg md:text-xl text-gray-300 mb-10 leading-relaxed max-w-2xl animate-fade-in-up opacity-0"
+            style={{ animationDelay: "0.5s", animationFillMode: "forwards" }}
+          >
+            We build and manage technology for small businesses and healthcare providers in Minnesota — done-for-you websites, HIPAA compliance, and IT infrastructure. Two divisions. One trusted team.
           </p>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up opacity-0" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>
             <a
-              href="#two-routes"
+              href="#two-divisions"
               className="inline-flex items-center justify-center bg-accent hover:bg-accent-dark text-white px-8 py-4 rounded-lg font-semibold text-lg transition-all duration-300 hover:shadow-lg hover:shadow-accent/30 btn-glow hover:scale-105"
             >
-              See What We Offer
+              See Our Two Divisions
               <svg className="ml-2 w-5 h-5 animate-bounce-slow" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
               </svg>

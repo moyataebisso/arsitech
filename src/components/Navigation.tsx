@@ -108,10 +108,19 @@ export default function Navigation() {
           </div>
 
           {/* Desktop CTA */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-3">
+            <a
+              href="https://wajiiwebsites.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 border-2 border-accent text-accent hover:bg-accent hover:text-white px-4 py-2 rounded-lg font-semibold text-sm transition-colors"
+            >
+              Wajii Websites
+              <ArrowTopRightOnSquareIcon className="w-3.5 h-3.5" />
+            </a>
             <Link
               href="/contact"
-              className="bg-accent hover:bg-accent-dark text-white px-6 py-2.5 rounded-lg font-medium transition-colors"
+              className="bg-accent hover:bg-accent-dark text-white px-5 py-2.5 rounded-lg font-medium transition-colors"
             >
               Free Consultation
             </Link>
@@ -183,7 +192,17 @@ export default function Navigation() {
               ) : null}
             </div>
           ))}
-          <div className="pt-4 border-t border-gray-100">
+          <div className="pt-4 border-t border-gray-100 space-y-3">
+            <a
+              href="https://wajiiwebsites.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-1.5 w-full border-2 border-accent text-accent hover:bg-accent hover:text-white px-6 py-3 rounded-lg font-semibold transition-colors"
+              onClick={() => setIsOpen(false)}
+            >
+              Wajii Websites
+              <ArrowTopRightOnSquareIcon className="w-4 h-4" />
+            </a>
             <Link
               href="/contact"
               className="block w-full text-center bg-accent hover:bg-accent-dark text-white px-6 py-3 rounded-lg font-medium transition-colors"

@@ -2,170 +2,131 @@
 
 import Link from "next/link";
 import {
-  BuildingStorefrontIcon,
-  ShieldCheckIcon,
+  GlobeAltIcon,
+  LockClosedIcon,
   ArrowTopRightOnSquareIcon,
-  CheckIcon,
 } from "@heroicons/react/24/solid";
 
 export default function TwoRoutesSection() {
   return (
-    <section id="two-routes" className="py-20 lg:py-28 bg-off-white relative scroll-mt-20">
+    <section
+      id="two-divisions"
+      className="py-20 lg:py-28 bg-off-white relative scroll-mt-20"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="max-w-3xl mx-auto text-center mb-14">
           <span className="inline-block text-sm font-semibold tracking-widest text-text-muted uppercase mb-3">
-            What We Offer
+            Our Two Divisions
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-primary mb-4 leading-tight">
-            Two services. One company.
+            One trusted team. Two divisions.
           </h2>
           <p className="text-lg text-text-light leading-relaxed">
-            We help small businesses with two things: building professional websites, and handling HIPAA compliance for healthcare providers. Most clients use one or the other. Some use both.
+            Arsi Technology Group LLC operates two focused divisions so small businesses and healthcare providers each get an offering built specifically for them.
           </p>
         </div>
 
         {/* Cards */}
         <div className="grid lg:grid-cols-2 gap-8 items-stretch">
-          {/* LEFT — Waji Professional Websites */}
+          {/* CARD 1 — Wajii Websites */}
           <article
-            className="group relative flex flex-col rounded-3xl p-8 md:p-10 bg-gradient-to-br from-amber-50 via-yellow-50 to-white border border-amber-100 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
+            className="group relative flex flex-col rounded-3xl p-8 md:p-10 bg-gradient-to-br from-white via-light-accent/40 to-accent/5 border border-accent/20 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300"
           >
             {/* Icon */}
-            <div className="w-14 h-14 rounded-2xl bg-highlight/15 flex items-center justify-center mb-6">
-              <BuildingStorefrontIcon className="w-8 h-8 text-highlight" />
+            <div className="w-14 h-14 rounded-2xl bg-accent/15 flex items-center justify-center mb-6">
+              <GlobeAltIcon className="w-8 h-8 text-accent" />
             </div>
 
             {/* Eyebrow */}
-            <span className="text-xs font-bold tracking-widest text-highlight uppercase mb-3">
-              For Local Businesses
+            <span className="text-xs font-bold tracking-widest text-accent uppercase mb-3">
+              Division 1 — Small Business Websites
             </span>
 
             {/* Heading */}
-            <h3 className="text-2xl md:text-3xl font-bold text-primary mb-3">
-              Waji Professional Websites
+            <h3 className="text-2xl md:text-3xl font-bold text-primary mb-2">
+              Wajii Websites
             </h3>
 
-            {/* Subhead */}
-            <p className="text-text-light text-base md:text-lg leading-relaxed mb-6">
-              Affordable, professional websites for restaurants, salons, nonprofits, and local services.
+            {/* Tagline */}
+            <p className="text-base md:text-lg font-semibold text-accent mb-4">
+              Done-for-you custom websites for small businesses
             </p>
 
-            {/* Bullets */}
-            <ul className="space-y-3 mb-8 flex-grow">
-              {[
-                "Custom design + copy written in your brand voice",
-                "Hosting, security, and updates included",
-                "Direct support — text us anytime",
-                "How it works: discovery call → design → preview → launch (about 1–2 weeks from start to live site)",
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-3">
-                  <span className="flex-shrink-0 w-5 h-5 mt-0.5 rounded-full bg-highlight/20 flex items-center justify-center">
-                    <CheckIcon className="w-3 h-3 text-highlight" />
-                  </span>
-                  <span className="text-text-dark text-sm md:text-base leading-relaxed">
-                    {item}
-                  </span>
-                </li>
-              ))}
-            </ul>
+            {/* Body */}
+            <p className="text-text-light text-base leading-relaxed mb-6 flex-grow">
+              We build, host, and manage your website. You focus on your business. Restaurants, home care agencies, salons, and more. Starting at <span className="font-semibold text-primary">$99/mo</span> — no tech skills needed.
+            </p>
 
             {/* CTA */}
             <a
               href="https://wajiiwebsites.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center w-full sm:w-auto bg-highlight hover:bg-amber-600 text-white px-6 py-3.5 rounded-xl font-semibold transition-all duration-300 group-hover:shadow-lg group-hover:shadow-highlight/30"
+              className="inline-flex items-center justify-center w-full sm:w-auto bg-accent hover:bg-accent-dark text-white px-6 py-3.5 rounded-xl font-semibold transition-all duration-300 group-hover:shadow-lg group-hover:shadow-accent/30"
             >
-              Visit Waji Sites
+              Visit Wajii Websites
               <ArrowTopRightOnSquareIcon className="w-4 h-4 ml-2" />
             </a>
-
-            {/* Footnote */}
-            <p className="text-xs text-text-muted italic mt-4">
-              A division of Arsi Technology Group
-            </p>
           </article>
 
-          {/* RIGHT — HIPAA & Healthcare IT */}
+          {/* CARD 2 — Arsi Tech Compliance */}
           <article
-            className="group relative flex flex-col rounded-3xl p-8 md:p-10 bg-gradient-to-br from-primary via-secondary to-primary border border-accent/20 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 overflow-hidden"
+            className="group relative flex flex-col rounded-3xl p-8 md:p-10 bg-gradient-to-br from-primary via-secondary to-primary border border-cyan/20 shadow-lg hover:shadow-2xl hover:scale-[1.02] transition-all duration-300 overflow-hidden"
           >
             {/* Decorative glow */}
-            <div className="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-48 h-48 bg-cyan/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-cyan/10 rounded-full blur-3xl pointer-events-none" />
+            <div className="absolute bottom-0 left-0 w-48 h-48 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
 
             <div className="relative flex flex-col flex-grow">
               {/* Icon */}
-              <div className="w-14 h-14 rounded-2xl bg-accent/20 flex items-center justify-center mb-6">
-                <ShieldCheckIcon className="w-8 h-8 text-accent" />
+              <div className="w-14 h-14 rounded-2xl bg-cyan/20 flex items-center justify-center mb-6">
+                <LockClosedIcon className="w-8 h-8 text-cyan" />
               </div>
 
               {/* Eyebrow */}
-              <span className="text-xs font-bold tracking-widest text-accent uppercase mb-3">
-                For Healthcare Providers
+              <span className="text-xs font-bold tracking-widest text-cyan uppercase mb-3">
+                Division 2 — Healthcare Compliance
               </span>
 
               {/* Heading */}
-              <h3 className="text-2xl md:text-3xl font-bold text-white mb-3">
-                HIPAA & Healthcare IT
+              <h3 className="text-2xl md:text-3xl font-bold text-white mb-2">
+                Arsi Tech Compliance
               </h3>
 
-              {/* Subhead */}
-              <p className="text-gray-300 text-base md:text-lg leading-relaxed mb-6">
-                Affordable HIPAA compliance, fractional Security Officer services, and IT support for Minnesota group homes, clinics, and small healthcare providers.
+              {/* Tagline */}
+              <p className="text-base md:text-lg font-semibold text-cyan mb-4">
+                HIPAA compliance for Minnesota healthcare providers
               </p>
 
-              {/* Bullets */}
-              <ul className="space-y-3 mb-8 flex-grow">
-                {[
-                  "Designated HIPAA Security Officer (45 CFR § 164.308(a)(2))",
-                  "Bi-weekly password reviews + annual risk analysis",
-                  "Built specifically for organizations under 20 employees",
-                  "How it works: consultation → custom proposal → signed BAA → ongoing partnership (typically 1–2 weeks to start)",
-                ].map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <span className="flex-shrink-0 w-5 h-5 mt-0.5 rounded-full bg-accent/20 flex items-center justify-center">
-                      <CheckIcon className="w-3 h-3 text-accent" />
-                    </span>
-                    <span className="text-gray-200 text-sm md:text-base leading-relaxed">
-                      {item}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-
-              {/* Educational link */}
-              <Link
-                href="/hipaa-explained"
-                className="inline-flex items-center text-sm text-cyan hover:text-white transition-colors mb-4 underline-offset-4 hover:underline"
-              >
-                New to HIPAA? Read our plain-English guide →
-              </Link>
+              {/* Body */}
+              <p className="text-gray-300 text-base leading-relaxed mb-6 flex-grow">
+                Fractional HIPAA Security Officer services — risk assessments, BAAs, M365/Azure/Intune oversight, and staff training. Built for home care agencies, assisted living, and clinics. Starting at <span className="font-semibold text-white">$750/mo</span>.
+              </p>
 
               {/* CTA */}
               <Link
-                href="/services#healthcare"
-                className="inline-flex items-center justify-center w-full sm:w-auto bg-accent hover:bg-accent-dark text-white px-6 py-3.5 rounded-xl font-semibold transition-all duration-300 group-hover:shadow-lg group-hover:shadow-accent/40"
+                href="/services"
+                className="inline-flex items-center justify-center w-full sm:w-auto bg-cyan hover:bg-cyan/80 text-primary px-6 py-3.5 rounded-xl font-semibold transition-all duration-300 group-hover:shadow-lg group-hover:shadow-cyan/40"
               >
                 Learn More
-                <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                <svg
+                  className="w-4 h-4 ml-2"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M17 8l4 4m0 0l-4 4m4-4H3"
+                  />
                 </svg>
               </Link>
-
-              {/* Footnote */}
-              <p className="text-xs text-gray-400 italic mt-4">
-                Full healthcare details on the Services page
-              </p>
             </div>
           </article>
         </div>
-
-        {/* Bottom note */}
-        <p className="text-center text-text-light text-sm mt-10 max-w-2xl mx-auto">
-          Healthcare clients work directly with Arsi Tech Group — unless you also want a Waji-branded website. We&apos;ll help you pick the right route on your free consultation.
-        </p>
       </div>
     </section>
   );

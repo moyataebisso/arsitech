@@ -254,18 +254,9 @@ export type NavLink = {
 };
 
 export const NAV_LINKS: NavLink[] = [
-  {
-    label: "Services",
-    href: "/services",
-    children: [
-      { label: "Waji Websites", href: "https://wajiiwebsites.com", external: true },
-      { label: "HIPAA & Healthcare IT", href: "/services#healthcare" },
-    ],
-  },
-  { label: "HIPAA Explained", href: "/hipaa-explained" },
-  { label: "Portfolio", href: "/portfolio" },
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/services" },
   { label: "About", href: "/about" },
-  { label: "Careers", href: "/careers" },
   { label: "Contact", href: "/contact" },
 ];
 
