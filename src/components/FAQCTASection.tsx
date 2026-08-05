@@ -8,12 +8,12 @@ const faqs = [
   {
     question: "What does Arsi Technology Group actually do?",
     answer:
-      "We run two service lines under one LLC: Wajii Websites (done-for-you custom websites for small businesses, starting at $99/mo) and Arsi Tech Compliance (fractional HIPAA Security Officer services for Minnesota healthcare providers, starting at $750/mo).",
+      "Three services under one LLC. Websites: done-for-you sites for small businesses through Wajii Websites, starting at $99/mo. Business IT: Microsoft 365, email, domains, and device management for small teams. HIPAA Compliance: fractional Security Officer, risk assessment, and BAAs for Minnesota healthcare providers, starting at $750/mo.",
   },
   {
-    question: "Do I need a website or compliance services?",
+    question: "Can I use more than one service?",
     answer:
-      "Many of our clients need both — especially home care agencies and assisted living facilities who need a professional site AND HIPAA compliance. We can handle both under one engagement.",
+      "Yes — most home care agencies and assisted living facilities we work with use all three. One engagement, one point of contact.",
   },
   {
     question: "How is this different from hiring an agency?",

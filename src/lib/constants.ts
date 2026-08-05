@@ -269,9 +269,9 @@ export const FOOTER_LINKS = {
   ],
   services: [
     { label: "Waji Professional Websites", href: "https://wajiiwebsites.com", external: true },
-    { label: "HIPAA Compliance", href: "/services#healthcare" },
-    { label: "Healthcare IT", href: "/services#healthcare" },
-    { label: "IT Consulting", href: "/services" },
+    { label: "HIPAA Compliance", href: "/services#hipaa" },
+    { label: "Business IT", href: "/services#business-it" },
+    { label: "IT Consulting", href: "/services#business-it" },
   ],
   resources: [
     { label: "HIPAA Explained", href: "/hipaa-explained" },

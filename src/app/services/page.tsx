@@ -1,78 +1,151 @@
 import { Metadata } from "next";
-import Link from "next/link";
 import {
   ShieldCheckIcon,
   DocumentCheckIcon,
   ClipboardDocumentListIcon,
   ServerStackIcon,
-  CheckIcon,
+  BellAlertIcon,
+  EnvelopeIcon,
+  ComputerDesktopIcon,
+  CloudArrowUpIcon,
+  LifebuoyIcon,
 } from "@heroicons/react/24/outline";
 import { ShieldCheckIcon as ShieldCheckSolid } from "@heroicons/react/24/solid";
 import AnimatedSection from "@/components/AnimatedSection";
 
 export const metadata: Metadata = {
-  title: "HIPAA Compliance Services for Minnesota Healthcare Providers",
+  title: "Business IT and HIPAA Compliance for Minnesota",
   description:
-    "Fractional HIPAA Security Officer, Security Risk Assessments (SRA), Business Associate Agreements, and M365/Azure/Intune HIPAA configuration for Minnesota home care agencies, assisted living, and clinics.",
+    "Business IT (Microsoft 365, email, devices, backup, support) and HIPAA compliance (Security Officer, risk assessment, BAAs, staff training, incident response) for Minnesota businesses and healthcare providers.",
 };
 
-type Section = {
+type ServiceBlock = {
   id: string;
   icon: typeof ShieldCheckIcon;
-  eyebrow: string;
   title: string;
-  subhead?: string;
   body: string;
-  bullets?: string[];
-  price: string;
+  fineprint?: string;
+  price?: string;
 };
 
-const SECTIONS: Section[] = [
+const IT_BLOCKS: ServiceBlock[] = [
   {
-    id: "consulting",
-    icon: ShieldCheckIcon,
-    eyebrow: "Section 1",
-    title: "HIPAA Compliance Consulting",
-    subhead: "Fractional Security Officer Services",
+    id: "m365",
+    icon: ServerStackIcon,
+    title: "Microsoft 365 setup and administration",
     body:
-      "We serve as your outsourced HIPAA Security Officer — satisfying the 45 CFR 164.308(a)(2) requirement without the cost of a full-time hire.",
-    bullets: [
-      "Security Officer Designation Letter",
-      "Ongoing oversight",
-      "Workforce training coordination",
-      "Incident response",
-    ],
+      "Tenant configuration, user provisioning, licensing, mailbox and OneDrive setup, and ongoing admin work so your team can just log in and work.",
+  },
+  {
+    id: "email",
+    icon: EnvelopeIcon,
+    title: "Business email and domain migration",
+    body:
+      "Move from Gmail personal or scattered inboxes to real business email on your own domain, with DNS and deliverability handled.",
+  },
+  {
+    id: "devices",
+    icon: ComputerDesktopIcon,
+    title: "Staff device setup and management",
+    body:
+      "Buying, imaging, enrolling, and locking down laptops. When a staff member joins or leaves, we handle the device side end-to-end.",
+  },
+  {
+    id: "backup",
+    icon: CloudArrowUpIcon,
+    title: "Backup",
+    body:
+      "Automated, encrypted backup of files, mailboxes, and workstations, with restore tested — not just configured.",
+  },
+  {
+    id: "support",
+    icon: LifebuoyIcon,
+    title: "Ongoing support",
+    body:
+      "One person who knows your setup. Email or call when something breaks, needs to change, or you're not sure what to do.",
+  },
+];
+
+const HIPAA_BLOCKS: ServiceBlock[] = [
+  {
+    id: "security-officer",
+    icon: ShieldCheckIcon,
+    title: "You're required to name a Security Officer. I'll be yours.",
+    body:
+      "Designated in writing, on file, and reachable. I run the ongoing oversight, coordinate training, and handle incidents on your behalf.",
+    fineprint: "Satisfies 45 CFR 164.308(a)(2)",
     price: "Starting at $750/mo",
   },
   {
     id: "sra",
     icon: DocumentCheckIcon,
-    eyebrow: "Section 2",
-    title: "Security Risk Assessment (SRA)",
-    subhead: "HHS-Required Risk Analysis",
+    title: "You need a written risk assessment on file. I run it and hand you the report.",
     body:
-      "The Security Risk Assessment is federally required for all covered entities and business associates. We run the full assessment using the official HHS OCR Tool and deliver a documented, audit-defensible report.",
+      "The full assessment, documented findings, remediation plan, and an audit-defensible report you can pull up on demand.",
+    fineprint: "HHS-required Security Risk Analysis, official OCR tool",
     price: "Included in onboarding — or $750 standalone",
   },
   {
     id: "baas",
     icon: ClipboardDocumentListIcon,
-    eyebrow: "Section 3",
-    title: "Business Associate Agreements (BAAs)",
+    title: "Every vendor that touches resident information needs a signed agreement.",
     body:
-      "We draft, review, and manage BAAs with all your vendors. Microsoft, EHR vendors, billing services — all covered.",
+      "Microsoft, your EHR, billing services, transportation vendors — I draft, negotiate where needed, sign, and track expirations.",
+    fineprint: "Business Associate Agreements — drafted, reviewed, tracked",
     price: "Included in monthly retainer",
   },
   {
-    id: "m365",
+    id: "m365-hardening",
     icon: ServerStackIcon,
-    eyebrow: "Section 4",
-    title: "M365 / Azure / Intune HIPAA Setup",
+    title: "Your Microsoft 365 and staff laptops get locked down properly.",
     body:
-      "We configure Microsoft 365, Azure AD, and Intune to meet HIPAA technical safeguard requirements — encryption, MFA, conditional access, device compliance policies.",
+      "Configured to meet HIPAA technical safeguard requirements: encryption, MFA, conditional access, and device compliance policies.",
+    fineprint: "Encryption, MFA, conditional access, device compliance",
     price: "Custom quote",
   },
+  {
+    id: "incident-response",
+    icon: BellAlertIcon,
+    title: "When something goes wrong, someone answers.",
+    body:
+      "Incident response, containment, and breach determination — including nights and weekends.",
+    fineprint: "Included in monthly retainer",
+  },
 ];
+
+function BlockCard({ block, index }: { block: ServiceBlock; index: number }) {
+  const Icon = block.icon;
+  return (
+    <AnimatedSection animation="fade-up" delay={index * 60}>
+      <article
+        id={block.id}
+        className="bg-white rounded-3xl p-8 md:p-10 border border-gray-200 shadow-md hover:shadow-xl transition-shadow duration-300 scroll-mt-24"
+      >
+        <div className="flex flex-col md:flex-row gap-6">
+          <div className="flex-shrink-0">
+            <div className="w-14 h-14 rounded-2xl bg-accent/15 flex items-center justify-center">
+              <Icon className="w-7 h-7 text-accent" aria-hidden="true" />
+            </div>
+          </div>
+          <div className="flex-grow">
+            <h3 className="text-xl md:text-2xl font-bold text-primary mb-2 leading-snug">
+              {block.title}
+            </h3>
+            {block.fineprint && (
+              <p className="text-xs text-text-muted mb-3">{block.fineprint}</p>
+            )}
+            <p className="text-text-light leading-relaxed mb-4">{block.body}</p>
+            {block.price && (
+              <div className="inline-flex items-center bg-light-accent text-primary text-sm font-semibold px-4 py-2 rounded-lg">
+                {block.price}
+              </div>
+            )}
+          </div>
+        </div>
+      </article>
+    </AnimatedSection>
+  );
+}
 
 export default function ServicesPage() {
   return (
@@ -90,14 +163,15 @@ export default function ServicesPage() {
             <div className="text-center">
               <div className="inline-flex items-center gap-2 bg-accent/15 text-accent px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-5">
                 <ShieldCheckSolid className="w-4 h-4" />
-                Arsi Tech Compliance
+                Business IT + HIPAA
               </div>
               <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-                HIPAA Compliance Services for{" "}
-                <span className="text-gradient-animate">Minnesota Healthcare Providers</span>
+                Business IT and{" "}
+                <span className="text-gradient-animate">HIPAA compliance</span>{" "}
+                for Minnesota
               </h1>
               <p className="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                Fractional Security Officer services, Security Risk Assessments, BAA management, and Microsoft 365 / Azure / Intune configuration — built for home care agencies, assisted living, and clinics.
+                Microsoft 365, business email, staff devices, and support for any small team. Plus fractional HIPAA Security Officer services for home care agencies, assisted living, and clinics.
               </p>
               <p className="text-sm text-gray-400 italic mt-4">
                 Looking for websites? Visit{" "}
@@ -116,61 +190,44 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* SECTIONS */}
-      <section className="py-20 bg-off-white relative overflow-hidden">
+      {/* BUSINESS IT */}
+      <section id="business-it" className="py-20 bg-off-white relative overflow-hidden scroll-mt-24">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-8">
-            {SECTIONS.map((s, i) => {
-              const Icon = s.icon;
-              return (
-                <AnimatedSection key={s.id} animation="fade-up" delay={i * 80}>
-                  <article
-                    id={s.id}
-                    className="bg-white rounded-3xl p-8 md:p-10 border border-gray-200 shadow-md hover:shadow-xl transition-shadow duration-300 scroll-mt-24"
-                  >
-                    <div className="flex flex-col md:flex-row gap-6">
-                      <div className="flex-shrink-0">
-                        <div className="w-14 h-14 rounded-2xl bg-accent/15 flex items-center justify-center">
-                          <Icon className="w-7 h-7 text-accent" />
-                        </div>
-                      </div>
-                      <div className="flex-grow">
-                        <span className="text-xs font-bold tracking-widest text-accent uppercase mb-2 block">
-                          {s.eyebrow}
-                        </span>
-                        <h2 className="text-2xl md:text-3xl font-bold text-primary mb-2">
-                          {s.title}
-                        </h2>
-                        {s.subhead && (
-                          <p className="text-base md:text-lg font-semibold text-text-dark mb-3">
-                            {s.subhead}
-                          </p>
-                        )}
-                        <p className="text-text-light leading-relaxed mb-4">
-                          {s.body}
-                        </p>
-                        {s.bullets && (
-                          <ul className="space-y-2 mb-4">
-                            {s.bullets.map((b) => (
-                              <li key={b} className="flex items-start gap-2.5 text-sm md:text-base text-text-dark">
-                                <CheckIcon className="w-4 h-4 text-accent mt-1 flex-shrink-0" />
-                                <span>{b}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        )}
-                        <div className="inline-flex items-center bg-light-accent text-primary text-sm font-semibold px-4 py-2 rounded-lg">
-                          {s.price}
-                        </div>
-                      </div>
-                    </div>
-                  </article>
-                </AnimatedSection>
-              );
-            })}
+          <AnimatedSection animation="fade-up" className="mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-3">
+              Business IT
+            </h2>
+            <p className="text-lg text-text-light max-w-3xl">
+              The plumbing every small team needs. We set it up, keep it running, and answer when it breaks.
+            </p>
+          </AnimatedSection>
+
+          <div className="space-y-6">
+            {IT_BLOCKS.map((b, i) => (
+              <BlockCard key={b.id} block={b} index={i} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* HIPAA */}
+      <section id="hipaa" className="py-20 bg-white relative overflow-hidden scroll-mt-24">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedSection animation="fade-up" className="mb-10">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-3">
+              HIPAA Compliance
+            </h2>
+            <p className="text-lg text-text-light max-w-3xl">
+              For Minnesota home care agencies, assisted living, and clinics. Everything a small provider actually needs, without hiring a full-time compliance officer.
+            </p>
+          </AnimatedSection>
+
+          <div className="space-y-6">
+            {HIPAA_BLOCKS.map((b, i) => (
+              <BlockCard key={b.id} block={b} index={i} />
+            ))}
           </div>
 
-          {/* CTA */}
           <AnimatedSection animation="fade-up" delay={100}>
             <div className="mt-16 text-center bg-gradient-to-br from-primary via-secondary to-primary rounded-3xl p-10 md:p-14 border border-accent/20 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl pointer-events-none" />
