@@ -3,11 +3,11 @@ import {
   ArrowTopRightOnSquareIcon,
   HeartIcon,
   BuildingStorefrontIcon,
-  HomeModernIcon,
   TruckIcon,
   CheckBadgeIcon,
   UsersIcon,
   Squares2X2Icon,
+  ShoppingBagIcon,
 } from "@heroicons/react/24/outline";
 import CTASection from "@/components/CTASection";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -25,6 +25,7 @@ const CATEGORY_ICONS: Record<PortfolioCategory, typeof HeartIcon> = {
   Transportation: TruckIcon,
   Community: UsersIcon,
   Platform: Squares2X2Icon,
+  Fashion: ShoppingBagIcon,
 };
 
 // Preserve display order: featured first, everything else in file order.

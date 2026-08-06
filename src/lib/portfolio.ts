@@ -3,7 +3,8 @@ export type PortfolioCategory =
   | "Restaurant"
   | "Transportation"
   | "Community"
-  | "Platform";
+  | "Platform"
+  | "Fashion";
 
 export type PortfolioSurface = "home" | "portfolio";
 
@@ -148,7 +149,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     slug: "indsve",
     name: "INDSVE",
     url: "https://indsve.com/",
-    category: "Platform",
+    category: "Fashion",
     industry: "Fashion / E-commerce",
     services: ["Shopify UI/UX Customization", "SMS Notification Setup", "Code Modifications", "E-commerce Optimization"],
     location: "Minnesota",
