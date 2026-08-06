@@ -7,7 +7,7 @@ import { ABOUT_VALUES, CORE_VALUES, FOUNDER_EDUCATION, FOUNDER_SKILLS, COMPANY }
 export const metadata: Metadata = {
   title: "About | Arsi Technology Group — Tech that fits your size and your budget",
   description:
-    "Making expensive tech services affordable for small businesses. Minneapolis-based, Minnesota-focused — built for the small and local end of the market with HIPAA Healthcare as our flagship specialty.",
+    "Making expensive tech services affordable for small businesses. Websites, business IT, and HIPAA compliance for Minnesota — Minneapolis-based, with HIPAA Healthcare as our flagship specialty.",
 };
 
 const HOW_WE_WORK = [

@@ -1,6 +1,7 @@
 import Link from "next/link";
-import { ShieldCheckIcon, MapPinIcon } from "@heroicons/react/24/solid";
+import { MapPinIcon } from "@heroicons/react/24/solid";
 import { ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
+import Logo from "./Logo";
 import { COMPANY, FOOTER_LINKS } from "@/lib/constants";
 
 export default function Footer() {
@@ -18,12 +19,10 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
           {/* Column 1 — Brand */}
           <div>
-            <Link href="/" className="flex items-center space-x-2 mb-4">
-              <ShieldCheckIcon className="h-8 w-8 text-accent" />
-              <span className="text-lg font-bold tracking-tight">
-                ARSI <span className="text-accent">TECHNOLOGY GROUP</span>
-              </span>
-            </Link>
+            <div className="mb-4">
+              <Logo variant="full" className="hidden sm:inline-flex text-white" />
+              <Logo variant="mark" className="sm:hidden text-white" />
+            </div>
             <p className="text-gray-300 text-sm italic leading-relaxed mb-4">
               Making expensive tech services affordable for small businesses.
             </p>

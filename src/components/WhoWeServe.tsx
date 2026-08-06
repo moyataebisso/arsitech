@@ -63,7 +63,7 @@ export default function WhoWeServe() {
             Industries we serve
           </h2>
           <p className="text-lg text-gray-300 max-w-2xl mx-auto">
-            Local businesses and small healthcare providers across Minnesota — one team, two divisions.
+            Local businesses and small healthcare providers across Minnesota — websites, business IT, and HIPAA compliance from one team.
           </p>
         </AnimatedSection>
 

@@ -22,7 +22,7 @@ const clients = [
   },
   {
     name: "Entrusted Home Healthcare",
-    website: "https://entrustedhomehealthcare.org",
+    website: "https://www.entrustedcareresidence.org",
     industry: "Home Healthcare",
     projectType: "Website + HIPAA Compliance",
     icon: HomeModernIcon,

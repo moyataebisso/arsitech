@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     template: "%s | Arsi Technology Group",
   },
   description:
-    "Arsi Technology Group LLC provides done-for-you websites (Wajii Websites) and HIPAA compliance consulting for Minnesota healthcare providers. Minneapolis, MN.",
+    "Websites, business IT, and HIPAA compliance for small businesses and healthcare providers in Minnesota.",
   keywords: [
     "HIPAA compliance Minnesota",
     "managed website service",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Arsi Technology Group LLC",
     description:
-      "Done-for-you websites and HIPAA compliance for MN businesses",
+      "Websites, business IT, and HIPAA compliance for small businesses and healthcare providers in Minnesota.",
     url: "https://arsitechgroup.com",
     siteName: "Arsi Technology Group",
     locale: "en_US",

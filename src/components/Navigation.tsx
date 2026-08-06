@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Bars3Icon, XMarkIcon, ChevronDownIcon, ArrowTopRightOnSquareIcon } from "@heroicons/react/24/outline";
-import { ShieldCheckIcon } from "@heroicons/react/24/solid";
+import Logo from "./Logo";
 import { NAV_LINKS, NavLink } from "@/lib/constants";
 
 function DesktopNavItem({ link }: { link: NavLink }) {
@@ -93,12 +93,8 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-[70px]">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <ShieldCheckIcon className="h-8 w-8 text-accent" />
-            <span className="text-xl font-bold text-primary tracking-tight">
-              ARSI <span className="text-accent">TECHNOLOGY GROUP</span>
-            </span>
-          </Link>
+          <Logo variant="full" className="hidden sm:inline-flex text-primary" />
+          <Logo variant="mark" className="sm:hidden text-primary" />
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
