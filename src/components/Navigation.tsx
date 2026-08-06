@@ -94,7 +94,7 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-[70px]">
           {/* Logo */}
           <Logo variant="full" className="hidden sm:flex text-primary" />
-          <Logo variant="mark" className="flex sm:hidden text-primary" />
+          <Logo variant="compact" className="flex sm:hidden text-primary" />
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">

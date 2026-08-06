@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 type LogoProps = {
-  variant?: "full" | "mark";
+  variant?: "full" | "mark" | "compact";
   tone?: "dark" | "light";
   className?: string;
 };
@@ -32,6 +32,8 @@ export default function Logo({ variant = "full", tone = "dark", className }: Log
       ? "text-gray-300"
       : "text-text-dark";
 
+  const markSize = variant === "compact" ? "w-9 h-9" : "w-10 h-10";
+
   return (
     <Link
       href="/"
@@ -39,7 +41,7 @@ export default function Logo({ variant = "full", tone = "dark", className }: Log
       className={`items-center ${className ?? ""}`}
       style={{ gap: "10px" }}
     >
-      <Mark className="w-10 h-10 text-current" />
+      <Mark className={`${markSize} text-current`} />
       {variant === "full" && (
         <span className="flex flex-col leading-none">
           <span className="font-bold text-[26px] tracking-wide whitespace-nowrap">
@@ -51,6 +53,11 @@ export default function Logo({ variant = "full", tone = "dark", className }: Log
           <span className={`text-[11px] tracking-[0.2em] whitespace-nowrap ${smallClass}`}>
             GROUP
           </span>
+        </span>
+      )}
+      {variant === "compact" && (
+        <span className="font-bold text-[26px] tracking-wide whitespace-nowrap leading-none">
+          ARSI
         </span>
       )}
     </Link>
