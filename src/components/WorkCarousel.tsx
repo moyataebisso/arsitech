@@ -42,7 +42,9 @@ type Props = {
   items?: PortfolioItem[];
 };
 
-export default function WorkCarousel({ items = PORTFOLIO }: Props) {
+const HOME_ITEMS = PORTFOLIO.filter((p) => p.showOn.includes("home"));
+
+export default function WorkCarousel({ items = HOME_ITEMS }: Props) {
   const reducedMotion = usePrefersReducedMotion();
 
   const plugins = useMemo(

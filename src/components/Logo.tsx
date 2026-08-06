@@ -2,6 +2,7 @@ import Link from "next/link";
 
 type LogoProps = {
   variant?: "full" | "mark";
+  tone?: "dark" | "light";
   className?: string;
 };
 
@@ -25,7 +26,12 @@ function Mark({ className }: { className?: string }) {
   );
 }
 
-export default function Logo({ variant = "full", className }: LogoProps) {
+export default function Logo({ variant = "full", tone = "dark", className }: LogoProps) {
+  const smallClass =
+    tone === "light"
+      ? "text-gray-300"
+      : "text-text-dark";
+
   return (
     <Link
       href="/"
@@ -39,10 +45,10 @@ export default function Logo({ variant = "full", className }: LogoProps) {
           <span className="font-bold text-[26px] tracking-wide whitespace-nowrap">
             ARSI
           </span>
-          <span className="text-[11px] tracking-[0.2em] opacity-60 mt-1 whitespace-nowrap">
+          <span className={`text-[11px] tracking-[0.2em] mt-1 whitespace-nowrap ${smallClass}`}>
             TECHNOLOGY
           </span>
-          <span className="text-[11px] tracking-[0.2em] opacity-60 whitespace-nowrap">
+          <span className={`text-[11px] tracking-[0.2em] whitespace-nowrap ${smallClass}`}>
             GROUP
           </span>
         </span>

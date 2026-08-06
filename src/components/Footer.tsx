@@ -20,8 +20,8 @@ export default function Footer() {
           {/* Column 1 — Brand */}
           <div>
             <div className="mb-4">
-              <Logo variant="full" className="hidden sm:inline-flex text-white" />
-              <Logo variant="mark" className="sm:hidden text-white" />
+              <Logo variant="full" tone="light" className="hidden sm:inline-flex text-white" />
+              <Logo variant="mark" tone="light" className="sm:hidden text-white" />
             </div>
             <p className="text-gray-300 text-sm italic leading-relaxed mb-4">
               Making expensive tech services affordable for small businesses.
