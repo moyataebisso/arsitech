@@ -21,9 +21,13 @@ export type PortfolioItem = {
   projectType: string;
   featured: boolean;
   image: string | null;
+  logo: string | null;
   live: boolean;
   showOn: PortfolioSurface[];
 };
+
+const LOGO_BASE =
+  "https://abhpzepanwhuswhiuutu.supabase.co/storage/v1/object/public/logos";
 
 export const PORTFOLIO: PortfolioItem[] = [
   {
@@ -40,6 +44,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     projectType: "Website + HIPAA Compliance",
     featured: true,
     image: null,
+    logo: `${LOGO_BASE}/entrusted-logo.png`,
     live: true,
     showOn: ["home", "portfolio"],
   },
@@ -57,6 +62,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     projectType: "Website + Business Email",
     featured: false,
     image: null,
+    logo: `${LOGO_BASE}/furtu-logo-2.png`,
     live: true,
     showOn: ["home", "portfolio"],
   },
@@ -74,6 +80,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     projectType: "Full Healthcare Platform Development",
     featured: false,
     image: null,
+    logo: `${LOGO_BASE}/careconnect-logo.png`,
     live: true,
     showOn: ["home", "portfolio"],
   },
@@ -91,6 +98,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     projectType: "Website + Automated Email System",
     featured: true,
     image: null,
+    logo: `${LOGO_BASE}/saveyours-logo.png`,
     live: true,
     showOn: ["home", "portfolio"],
   },
@@ -108,6 +116,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     projectType: "Website + Business Email + Ongoing Support",
     featured: false,
     image: null,
+    logo: `${LOGO_BASE}/riftvalley-logo.png`,
     live: true,
     showOn: ["home", "portfolio"],
   },
@@ -125,6 +134,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     projectType: "Full Education Platform",
     featured: true,
     image: null,
+    logo: `${LOGO_BASE}/odda-logo.png`,
     live: true,
     showOn: ["home", "portfolio"],
   },
@@ -142,6 +152,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     projectType: "Our Product",
     featured: false,
     image: null,
+    logo: `${LOGO_BASE}/waji.png`,
     live: true,
     showOn: ["home"],
   },
@@ -159,6 +170,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     projectType: "Shopify Clothing Brand",
     featured: false,
     image: null,
+    logo: `${LOGO_BASE}/indsve-logo.png`,
     live: true,
     showOn: ["portfolio"],
   },

@@ -93,8 +93,8 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-[70px]">
           {/* Logo */}
-          <Logo variant="full" className="hidden sm:inline-flex text-primary" />
-          <Logo variant="mark" className="sm:hidden text-primary" />
+          <Logo variant="full" className="hidden sm:flex text-primary" />
+          <Logo variant="mark" className="flex sm:hidden text-primary" />
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">

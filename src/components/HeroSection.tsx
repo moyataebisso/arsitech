@@ -6,7 +6,7 @@ export default function HeroSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
         <div className="max-w-3xl">
           <h1 className="font-bold text-primary leading-[1.1] mb-6 text-4xl md:text-5xl lg:text-6xl">
-            Big-company technology at small-business prices, with real support behind it.
+            Making expensive tech services affordable for small businesses.
           </h1>
 
           <p className="text-lg md:text-xl text-text-dark mb-10 leading-relaxed">

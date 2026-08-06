@@ -36,7 +36,7 @@ export default function Logo({ variant = "full", tone = "dark", className }: Log
     <Link
       href="/"
       aria-label="Arsi Technology Group — home"
-      className={`inline-flex items-center ${className ?? ""}`}
+      className={`items-center ${className ?? ""}`}
       style={{ gap: "10px" }}
     >
       <Mark className="w-10 h-10 text-current" />

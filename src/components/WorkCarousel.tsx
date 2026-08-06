@@ -130,8 +130,8 @@ export default function WorkCarousel({ items = HOME_ITEMS }: Props) {
                   aria-label={item.name}
                 >
                   <article className="h-full flex flex-col bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10 overflow-hidden hover:border-accent/50 hover:shadow-xl hover:shadow-accent/10 transition-all duration-300">
-                    <div className="relative w-full aspect-[16/10] bg-secondary">
-                      {item.image ? (
+                    {item.image && (
+                      <div className="relative w-full aspect-[16/10] bg-secondary">
                         <Image
                           src={item.image}
                           alt={`Screenshot of ${item.name} website`}
@@ -139,15 +139,28 @@ export default function WorkCarousel({ items = HOME_ITEMS }: Props) {
                           sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                           className="object-cover"
                         />
-                      ) : (
-                        <div
-                          aria-hidden="true"
-                          className="w-full h-full flex items-center justify-center bg-gradient-to-br from-secondary via-primary to-secondary"
-                        >
-                          <span className="text-4xl md:text-5xl font-bold text-accent/70 tracking-wider">
-                            {initialsFor(item.name)}
-                          </span>
+                      </div>
+                    )}
+
+                    {/* Brand strip — logo when available, initials fallback */}
+                    <div className="w-full h-24 flex items-center justify-center px-6 py-4 bg-white/5 border-b border-white/10">
+                      {item.logo ? (
+                        <div className="relative h-12 w-full">
+                          <Image
+                            src={item.logo}
+                            alt={`${item.name} logo`}
+                            fill
+                            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                            className="object-contain"
+                          />
                         </div>
+                      ) : (
+                        <span
+                          aria-hidden="true"
+                          className="text-3xl font-bold text-accent/70 tracking-wider"
+                        >
+                          {initialsFor(item.name)}
+                        </span>
                       )}
                     </div>
 
