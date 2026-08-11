@@ -9,12 +9,12 @@ export const metadata: Metadata = {
   title: { absolute: "IT and Compliance Services by Industry | Arsi Technology Group" },
   description:
     "Vertical IT and compliance programs for Minnesota 245D providers, home care and assisted living, tax and accounting firms, cyber insurance renewal, and student transportation.",
-  alternates: { canonical: "https://arsitechgroup.com/solutions" },
+  alternates: { canonical: "https://www.arsitechgroup.com/solutions" },
   openGraph: {
     title: "IT and Compliance Services by Industry | Arsi Technology Group",
     description:
       "Vertical IT and compliance programs for Minnesota 245D providers, home care and assisted living, tax and accounting firms, cyber insurance renewal, and student transportation.",
-    url: "https://arsitechgroup.com/solutions",
+    url: "https://www.arsitechgroup.com/solutions",
     siteName: "Arsi Technology Group",
     locale: "en_US",
     type: "website",

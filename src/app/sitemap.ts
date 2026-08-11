@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { solutions } from "@/content/solutions";
 
-const SITE_URL = "https://arsitechgroup.com";
+const SITE_URL = "https://www.arsitechgroup.com";
 
 const LAST_MODIFIED = new Date("2026-08-11");
 

@@ -21,7 +21,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://arsitechgroup.com"),
+  metadataBase: new URL("https://www.arsitechgroup.com"),
   title: {
     default: "Arsi Technology Group LLC — Minnesota Tech & HIPAA Compliance",
     template: "%s | Arsi Technology Group",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     title: "Arsi Technology Group LLC",
     description:
       "Websites, business IT, and HIPAA compliance for small businesses and healthcare providers in Minnesota.",
-    url: "https://arsitechgroup.com",
+    url: "https://www.arsitechgroup.com",
     siteName: "Arsi Technology Group",
     locale: "en_US",
     type: "website",

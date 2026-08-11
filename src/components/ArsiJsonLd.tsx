@@ -3,7 +3,7 @@ export function ArsiJsonLd() {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     name: "Arsi Technology Group LLC",
-    url: "https://arsitechgroup.com",
+    url: "https://www.arsitechgroup.com",
     email: "arsitechgroup@gmail.com",
     description:
       "IT services, HIPAA compliance consulting, and managed website services for small businesses and healthcare providers in Minnesota.",

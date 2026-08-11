@@ -21,7 +21,7 @@ export async function generateMetadata({
   const solution = solutions.find((s) => s.slug === slug);
   if (!solution) return {};
 
-  const url = `https://arsitechgroup.com/solutions/${solution.slug}`;
+  const url = `https://www.arsitechgroup.com/solutions/${solution.slug}`;
   return {
     title: { absolute: solution.seoTitle },
     description: solution.seoDescription,
