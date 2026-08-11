@@ -51,8 +51,40 @@ export default async function SolutionPage({
   const solution = solutions.find((s) => s.slug === slug);
   if (!solution) notFound();
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: solution.faq.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+
+  const serviceSchema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: solution.h1,
+    description: solution.seoDescription,
+    provider: {
+      "@type": "Organization",
+      name: "Arsi Technology Group LLC",
+    },
+    areaServed: "Minnesota",
+    serviceType: solution.navLabel,
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+
       {/* Hero */}
       <section className="relative bg-primary bg-grid-pattern overflow-hidden pt-[70px]">
         <div className="absolute inset-0 bg-gradient-to-br from-primary via-secondary to-primary opacity-95" />

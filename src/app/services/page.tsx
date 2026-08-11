@@ -11,6 +11,7 @@ import {
   LifebuoyIcon,
 } from "@heroicons/react/24/outline";
 import { ShieldCheckIcon as ShieldCheckSolid } from "@heroicons/react/24/solid";
+import Link from "next/link";
 import AnimatedSection from "@/components/AnimatedSection";
 
 export const metadata: Metadata = {
@@ -218,7 +219,21 @@ export default function ServicesPage() {
               HIPAA Compliance
             </h2>
             <p className="text-lg text-text-light max-w-3xl">
-              For Minnesota home care agencies, assisted living, and clinics. Everything a small provider actually needs, without hiring a full-time compliance officer.
+              For Minnesota{" "}
+              <Link
+                href="/solutions/home-care-assisted-living"
+                className="text-accent hover:text-accent-dark underline underline-offset-2"
+              >
+                home care agencies and assisted living
+              </Link>
+              ,{" "}
+              <Link
+                href="/solutions/245d-hcbs"
+                className="text-accent hover:text-accent-dark underline underline-offset-2"
+              >
+                245D providers
+              </Link>
+              , and clinics. Everything a small provider actually needs, without hiring a full-time compliance officer.
             </p>
           </AnimatedSection>
 
