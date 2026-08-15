@@ -1,5 +1,6 @@
 import { createClient } from "@supabase/supabase-js";
 import { Resend } from "resend";
+import { escapeHtml } from "@/lib/form-guard";
 
 function getSupabaseAdmin() {
   return createClient(
@@ -44,17 +45,18 @@ export async function POST(request: Request) {
 
   // Notify yourself
   try {
+    const fromName = process.env.RESEND_FROM_NAME ?? "Arsi Technology Group";
     const resend = new Resend(process.env.RESEND_API_KEY);
     await resend.emails.send({
-      from: `Arsi Tech <${process.env.RESEND_FROM_EMAIL}>`,
+      from: `${fromName} <${process.env.RESEND_FROM_EMAIL}>`,
       to: "arsitechgroup@gmail.com",
       subject: `🔧 ArsiTech Change Request: ${requestType}`,
       html: `
         <h2>New change request for arsitechgroup.com</h2>
-        <p><strong>Type:</strong> ${requestType}</p>
-        <p><strong>Priority:</strong> ${priority}</p>
-        <p><strong>Request:</strong> ${description}</p>
-        <p><small>ID: ${data.id}</small></p>
+        <p><strong>Type:</strong> ${escapeHtml(requestType)}</p>
+        <p><strong>Priority:</strong> ${escapeHtml(priority)}</p>
+        <p><strong>Request:</strong> ${escapeHtml(description)}</p>
+        <p><small>ID: ${escapeHtml(data.id)}</small></p>
       `,
     });
   } catch (e) {

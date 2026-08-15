@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, FormEvent } from "react";
+import { useRef, useState, FormEvent } from "react";
 import Link from "next/link";
 import { AcademicCapIcon, BriefcaseIcon, CodeBracketIcon, MapPinIcon, CheckCircleIcon, RocketLaunchIcon } from "@heroicons/react/24/outline";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -68,6 +68,8 @@ export default function CareersPage() {
   });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const honeypotRef = useRef<HTMLInputElement>(null);
+  const mountedAtRef = useRef<number>(Date.now());
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -80,7 +82,11 @@ export default function CareersPage() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          website: honeypotRef.current?.value ?? "",
+          _mt: mountedAtRef.current,
+        }),
       });
 
       if (!response.ok) {
@@ -287,7 +293,7 @@ export default function CareersPage() {
                 </svg>
                 <h3 className="text-2xl font-bold text-white mb-2">Application Submitted!</h3>
                 <p className="text-gray-300 mb-6">
-                  Thanks for applying! We&apos;ve sent a confirmation to your email. We&apos;ll review your application and reach out if there&apos;s a fit.
+                  Thanks for applying! We&apos;ll review your application and reach out if there&apos;s a fit.
                 </p>
                 <Link
                   href="/"
@@ -299,6 +305,30 @@ export default function CareersPage() {
             ) : (
               <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/10">
                 <form onSubmit={handleSubmit} className="space-y-6">
+                  {/* Honeypot — CSS-hidden, real users cannot see it. Bots fill it. */}
+                  <div
+                    aria-hidden="true"
+                    style={{
+                      position: "absolute",
+                      left: "-9999px",
+                      top: "auto",
+                      width: "1px",
+                      height: "1px",
+                      overflow: "hidden",
+                    }}
+                  >
+                    <label htmlFor="website">Website (leave blank)</label>
+                    <input
+                      ref={honeypotRef}
+                      type="text"
+                      id="website"
+                      name="website"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      defaultValue=""
+                    />
+                  </div>
+
                   {/* Personal Info */}
                   <div>
                     <h3 className="text-lg font-semibold text-white mb-4">Personal Information</h3>

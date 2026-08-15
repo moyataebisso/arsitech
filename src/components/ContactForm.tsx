@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, FormEvent } from "react";
+import { useRef, useState, FormEvent } from "react";
 import { BUSINESS_TYPES, SERVICE_INTERESTS } from "@/lib/constants";
 
 interface FormData {
@@ -33,6 +33,8 @@ export default function ContactForm({ defaultService = "" }: ContactFormProps) {
   });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const honeypotRef = useRef<HTMLInputElement>(null);
+  const mountedAtRef = useRef<number>(Date.now());
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -45,7 +47,11 @@ export default function ContactForm({ defaultService = "" }: ContactFormProps) {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          website: honeypotRef.current?.value ?? "",
+          _mt: mountedAtRef.current,
+        }),
       });
 
       if (!response.ok) {
@@ -96,7 +102,7 @@ export default function ContactForm({ defaultService = "" }: ContactFormProps) {
         </svg>
         <h3 className="text-2xl font-bold text-white mb-2">Message Sent!</h3>
         <p className="text-gray-300 mb-6">
-          Thanks! We&apos;ll be in touch within 24 hours. Check your email for a confirmation.
+          Thanks! We&apos;ll be in touch within 24 hours.
         </p>
         <button
           onClick={() => setStatus("idle")}
@@ -114,6 +120,30 @@ export default function ContactForm({ defaultService = "" }: ContactFormProps) {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
+      {/* Honeypot — CSS-hidden, real users cannot see it. Bots fill it. */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          left: "-9999px",
+          top: "auto",
+          width: "1px",
+          height: "1px",
+          overflow: "hidden",
+        }}
+      >
+        <label htmlFor="website">Website (leave blank)</label>
+        <input
+          ref={honeypotRef}
+          type="text"
+          id="website"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+          defaultValue=""
+        />
+      </div>
+
       {/* Name Fields */}
       <div className="grid md:grid-cols-2 gap-6">
         <div>
