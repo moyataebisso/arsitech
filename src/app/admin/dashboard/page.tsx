@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState, useCallback } from "react";
 import Link from "next/link";
-import { supabase } from "@/lib/supabase";
 import {
   GlobeAltIcon,
   ArrowTopRightOnSquareIcon,
@@ -102,6 +101,7 @@ export default function DashboardPage() {
   );
   const [requests, setRequests] = useState<ChangeRequest[]>([]);
   const [loadingRequests, setLoadingRequests] = useState(true);
+  const [requestsError, setRequestsError] = useState<string | null>(null);
   const [refreshing, setRefreshing] = useState(false);
 
   const today = new Date().toLocaleDateString("en-US", {
@@ -122,17 +122,28 @@ export default function DashboardPage() {
     }
   }, []);
 
-  /* Fetch change requests from Supabase */
+  /* Fetch change requests from the admin API (service-role backed). */
   const fetchRequests = useCallback(async () => {
+    setRequestsError(null);
     try {
-      const { data } = await supabase
-        .from("change_requests")
-        .select("*")
-        .order("created_at", { ascending: false })
-        .limit(10);
-      if (data) setRequests(data);
-    } catch {
-      /* silent */
+      const res = await fetch("/api/admin/change-requests", { cache: "no-store" });
+      if (res.status === 401) {
+        setRequestsError("Your session expired. Please sign in again.");
+        setRequests([]);
+        return;
+      }
+      if (!res.ok) {
+        setRequestsError(`Failed to load requests (HTTP ${res.status}).`);
+        setRequests([]);
+        return;
+      }
+      const body: { data?: ChangeRequest[] } = await res.json();
+      setRequests(body.data ?? []);
+    } catch (err) {
+      setRequestsError(
+        err instanceof Error ? `Failed to load requests: ${err.message}` : "Failed to load requests."
+      );
+      setRequests([]);
     } finally {
       setLoadingRequests(false);
     }
@@ -266,6 +277,11 @@ export default function DashboardPage() {
                   <div key={i} className="h-12 bg-gray-100 rounded-lg animate-pulse" />
                 ))}
               </div>
+            ) : requestsError ? (
+              <div className="text-center py-6 border border-red-200 bg-red-50 rounded-lg px-3">
+                <ExclamationTriangleIcon className="h-6 w-6 text-red-500 mx-auto mb-2" />
+                <p className="text-xs text-red-700">{requestsError}</p>
+              </div>
             ) : requests.length === 0 ? (
               <div className="text-center py-6">
                 <BellIcon className="h-8 w-8 text-gray-200 mx-auto mb-2" />
@@ -316,6 +332,11 @@ export default function DashboardPage() {
                 {[1, 2, 3].map((i) => (
                   <div key={i} className="h-14 bg-gray-100 rounded-lg animate-pulse" />
                 ))}
+              </div>
+            ) : requestsError ? (
+              <div className="text-center py-6 border border-red-200 bg-red-50 rounded-lg px-3 mb-4">
+                <ExclamationTriangleIcon className="h-6 w-6 text-red-500 mx-auto mb-2" />
+                <p className="text-xs text-red-700">{requestsError}</p>
               </div>
             ) : requests.length === 0 ? (
               <div className="text-center py-6">

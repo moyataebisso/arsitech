@@ -3,7 +3,6 @@ import { useState } from "react";
 
 export default function ArsiAdminPage() {
   const [secret, setSecret] = useState("");
-  const [isAuth, setIsAuth] = useState(false);
   const [type, setType] = useState("general");
   const [priority, setPriority] = useState("normal");
   const [description, setDescription] = useState("");
@@ -11,11 +10,11 @@ export default function ArsiAdminPage() {
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
 
-  const checkSecret = () => {
-    // Simple client-side check for UX
-    // Real check happens in API
-    if (secret.length > 5) setIsAuth(true);
-  };
+  // Middleware guarantees the visitor is signed in. This page no longer runs
+  // its own client-side gate. The `secret` field below is a temporary stopgap
+  // — /api/change-requests/submit still checks ADMIN_SECRET on the server, and
+  // that endpoint will migrate to requireAdmin in a follow-up pass. When it
+  // does, remove the secret field entirely.
 
   const handleSubmit = async () => {
     if (description.length < 10) {
@@ -46,30 +45,6 @@ export default function ArsiAdminPage() {
       setError(data.error || "Failed to submit");
     }
   };
-
-  if (!isAuth) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gray-50">
-        <div className="bg-white p-8 rounded-xl shadow w-full max-w-sm">
-          <h1 className="text-xl font-bold mb-4">Arsi Tech Admin</h1>
-          <input
-            type="password"
-            placeholder="Enter access code"
-            value={secret}
-            onChange={(e) => setSecret(e.target.value)}
-            onKeyDown={(e) => e.key === "Enter" && checkSecret()}
-            className="w-full border rounded-lg px-3 py-2 mb-3 text-sm"
-          />
-          <button
-            onClick={checkSecret}
-            className="w-full bg-blue-600 text-white rounded-lg py-2 text-sm font-medium"
-          >
-            Access
-          </button>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div className="min-h-screen bg-gray-50 p-8">
@@ -147,6 +122,23 @@ export default function ArsiAdminPage() {
             />
             <p className="text-xs text-gray-400 mt-1">
               {description.length} chars (minimum 10)
+            </p>
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium mb-1">
+              Admin passphrase
+            </label>
+            <input
+              type="password"
+              value={secret}
+              onChange={(e) => setSecret(e.target.value)}
+              placeholder="ADMIN_SECRET"
+              className="w-full border rounded-lg px-3 py-2 text-sm"
+              autoComplete="current-password"
+            />
+            <p className="text-xs text-gray-400 mt-1">
+              Temporary — will be removed once this endpoint moves to session auth.
             </p>
           </div>
 
