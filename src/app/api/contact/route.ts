@@ -42,12 +42,17 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    const notificationEmail = process.env.NOTIFICATION_EMAIL;
+    if (!notificationEmail) {
+      throw new Error("NOTIFICATION_EMAIL env var is not set");
+    }
+
     const fromName = process.env.RESEND_FROM_NAME ?? "Arsi Technology Group";
     const resend = new Resend(process.env.RESEND_API_KEY);
 
     await resend.emails.send({
       from: `${fromName} <${process.env.RESEND_FROM_EMAIL}>`,
-      to: "arsitechgroup@gmail.com",
+      to: notificationEmail,
       replyTo: email,
       subject: `New Contact Form Submission - ${businessName}`,
       html: `

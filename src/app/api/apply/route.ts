@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 import {
   escapeHtml,
   guard,
@@ -51,19 +51,17 @@ export async function POST(request: NextRequest) {
     const linkedInHref = safeHref(linkedIn);
     const portfolioHref = safeHref(portfolio);
 
+    const notificationEmail = process.env.NOTIFICATION_EMAIL;
+    if (!notificationEmail) {
+      throw new Error("NOTIFICATION_EMAIL env var is not set");
+    }
+
     const fromName = process.env.RESEND_FROM_NAME ?? "Arsi Technology Group";
+    const resend = new Resend(process.env.RESEND_API_KEY);
 
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.GMAIL_USER,
-        pass: process.env.GMAIL_APP_PASSWORD,
-      },
-    });
-
-    const mailOptions = {
-      from: `${fromName} <${process.env.GMAIL_USER}>`,
-      to: process.env.GMAIL_USER,
+    await resend.emails.send({
+      from: `${fromName} <${process.env.RESEND_FROM_EMAIL}>`,
+      to: notificationEmail,
       replyTo: email,
       subject: `New Internship Application - ${firstName} ${lastName}`,
       html: `
@@ -105,9 +103,7 @@ export async function POST(request: NextRequest) {
         <hr />
         <p style="color: #666; font-size: 12px;">This application was submitted through the Arsi Technology Group careers page.</p>
       `,
-    };
-
-    await transporter.sendMail(mailOptions);
+    });
 
     return NextResponse.json({ success: true });
   } catch (error) {

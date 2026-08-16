@@ -18,7 +18,10 @@
       "Bash(ls -la /c/Users/ebiss/Projects/arsitech/.env*)",
       "Bash(node -e \"try { require.resolve\\(''resend''\\); console.log\\(''resend: installed''\\); } catch { console.log\\(''resend: NOT installed''\\); }\")",
       "Bash(node -e \"try { require.resolve\\(''nodemailer''\\); console.log\\(''nodemailer: installed''\\); } catch { console.log\\(''nodemailer: NOT installed''\\); }\")",
-      "PowerShell(Get-NetTCPConnection *)"
+      "PowerShell(Get-NetTCPConnection *)",
+      "Bash(npm uninstall *)",
+      "Bash(npm audit *)",
+      "Bash(git *)"
     ]
   }
 }
