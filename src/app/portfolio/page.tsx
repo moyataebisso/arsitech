@@ -29,9 +29,10 @@ const CATEGORY_ICONS: Record<PortfolioCategory, typeof HeartIcon> = {
 };
 
 // Preserve display order: featured first, everything else in file order.
-const clients = PORTFOLIO.filter((p) => p.showOn.includes("portfolio")).sort(
-  (a, b) => Number(b.featured) - Number(a.featured)
-);
+// Only render entries with documented consent to display publicly.
+const clients = PORTFOLIO.filter(
+  (p) => p.consent && p.showOn.includes("portfolio")
+).sort((a, b) => Number(b.featured) - Number(a.featured));
 
 const industries = Array.from(
   new Set(clients.map((c) => c.industry ?? c.category))

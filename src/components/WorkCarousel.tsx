@@ -42,7 +42,10 @@ type Props = {
   items?: PortfolioItem[];
 };
 
-const HOME_ITEMS = PORTFOLIO.filter((p) => p.showOn.includes("home"));
+// Only render entries with documented consent to display publicly.
+const HOME_ITEMS = PORTFOLIO.filter(
+  (p) => p.consent && p.showOn.includes("home")
+);
 
 export default function WorkCarousel({ items = HOME_ITEMS }: Props) {
   const reducedMotion = usePrefersReducedMotion();

@@ -56,11 +56,16 @@ export async function POST(request: NextRequest) {
       throw new Error("NOTIFICATION_EMAIL env var is not set");
     }
 
+    const fromEmail = process.env.RESEND_FROM_EMAIL;
+    if (!fromEmail) {
+      throw new Error("RESEND_FROM_EMAIL env var is not set");
+    }
+
     const fromName = process.env.RESEND_FROM_NAME ?? "Arsi Technology Group";
     const resend = new Resend(process.env.RESEND_API_KEY);
 
     await resend.emails.send({
-      from: `${fromName} <${process.env.RESEND_FROM_EMAIL}>`,
+      from: `${fromName} <${fromEmail}>`,
       to: notificationEmail,
       replyTo: email,
       subject: `New Internship Application - ${firstName} ${lastName}`,

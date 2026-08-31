@@ -24,6 +24,10 @@ export type PortfolioItem = {
   logo: string | null;
   live: boolean;
   showOn: PortfolioSurface[];
+  // Written permission to display this entry publicly. Own properties may set
+  // this to true; third-party clients require documented consent on file.
+  // Anything with consent: false must be filtered out at every render site.
+  consent: boolean;
 };
 
 const LOGO_BASE =
@@ -47,6 +51,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     logo: `${LOGO_BASE}/entrusted-logo.png`,
     live: true,
     showOn: ["home", "portfolio"],
+    consent: false,
   },
   {
     slug: "elroi",
@@ -65,6 +70,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     logo: `${LOGO_BASE}/furtu-logo-2.png`,
     live: true,
     showOn: ["home", "portfolio"],
+    consent: false,
   },
   {
     slug: "careconnect",
@@ -83,6 +89,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     logo: `${LOGO_BASE}/careconnect-logo.png`,
     live: true,
     showOn: ["home", "portfolio"],
+    consent: true,
   },
   {
     slug: "saveyours",
@@ -101,6 +108,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     logo: `${LOGO_BASE}/saveyours-logo.png`,
     live: true,
     showOn: ["home", "portfolio"],
+    consent: true,
   },
   {
     slug: "riftvalley",
@@ -119,6 +127,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     logo: `${LOGO_BASE}/riftvalley-logo.png`,
     live: true,
     showOn: ["home", "portfolio"],
+    consent: false,
   },
   {
     slug: "oromo",
@@ -137,6 +146,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     logo: `${LOGO_BASE}/odda-logo.png`,
     live: true,
     showOn: ["home", "portfolio"],
+    consent: true,
   },
   {
     slug: "wajii",
@@ -155,6 +165,7 @@ export const PORTFOLIO: PortfolioItem[] = [
     logo: `${LOGO_BASE}/waji.png`,
     live: true,
     showOn: ["home"],
+    consent: true,
   },
   {
     slug: "indsve",
@@ -173,5 +184,6 @@ export const PORTFOLIO: PortfolioItem[] = [
     logo: `${LOGO_BASE}/indsve-logo.png`,
     live: true,
     showOn: ["portfolio"],
+    consent: false,
   },
 ];

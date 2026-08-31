@@ -2,19 +2,12 @@
 import { useState } from "react";
 
 export default function ArsiAdminPage() {
-  const [secret, setSecret] = useState("");
   const [type, setType] = useState("general");
   const [priority, setPriority] = useState("normal");
   const [description, setDescription] = useState("");
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
-
-  // Middleware guarantees the visitor is signed in. This page no longer runs
-  // its own client-side gate. The `secret` field below is a temporary stopgap
-  // — /api/change-requests/submit still checks ADMIN_SECRET on the server, and
-  // that endpoint will migrate to requireAdmin in a follow-up pass. When it
-  // does, remove the secret field entirely.
 
   const handleSubmit = async () => {
     if (description.length < 10) {
@@ -24,14 +17,13 @@ export default function ArsiAdminPage() {
     setLoading(true);
     setError("");
 
-    const res = await fetch("/api/change-requests/submit", {
+    const res = await fetch("/api/admin/change-requests/submit", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         description,
         requestType: type,
         priority,
-        secret,
       }),
     });
 
@@ -122,23 +114,6 @@ export default function ArsiAdminPage() {
             />
             <p className="text-xs text-gray-400 mt-1">
               {description.length} chars (minimum 10)
-            </p>
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium mb-1">
-              Admin passphrase
-            </label>
-            <input
-              type="password"
-              value={secret}
-              onChange={(e) => setSecret(e.target.value)}
-              placeholder="ADMIN_SECRET"
-              className="w-full border rounded-lg px-3 py-2 text-sm"
-              autoComplete="current-password"
-            />
-            <p className="text-xs text-gray-400 mt-1">
-              Temporary — will be removed once this endpoint moves to session auth.
             </p>
           </div>
 

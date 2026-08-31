@@ -114,7 +114,7 @@ export default function DashboardPage() {
   /* Fetch site statuses */
   const fetchStatuses = useCallback(async () => {
     try {
-      const res = await fetch("/api/health-check");
+      const res = await fetch("/api/admin/health-check", { cache: "no-store" });
       const data: SiteStatus[] = await res.json();
       setSiteStatuses(data);
     } catch {

@@ -50,7 +50,7 @@ export const solutions: Solution[] = [
       "Helpdesk for your staff",
     ],
     proof:
-      "We serve as designated HIPAA Security Officer for a licensed Minnesota assisted living and 245D provider, where we led a full forensic investigation of a remote-access compromise, coordinated with legal counsel on the breach determination, and delivered a 25-item corrective action plan.",
+      "Designated HIPAA Security Officer services for Minnesota 245D and HCBS providers, covering annual Security Risk Assessment, Security Rule policies, workforce training, Microsoft 365 and endpoint administration, and incident response readiness with a documented breach clock.",
     faq: [
       {
         q: "Do you replace our administrator?",
@@ -105,7 +105,7 @@ export const solutions: Solution[] = [
       "Helpdesk for your staff",
     ],
     proof:
-      "We manage Microsoft 365, device security, and the HIPAA program for a licensed Minnesota assisted living provider, including the forensic response to a live remote-access compromise.",
+      "Fractional HIPAA Security Officer, Microsoft 365 administration, device management, and Security Rule program work built for Minnesota 144A home care and 144G assisted living providers in the five-to-fifty staff range.",
     faq: [
       {
         q: "We use an EHR vendor. Does that cover us?",
@@ -113,7 +113,7 @@ export const solutions: Solution[] = [
       },
       {
         q: "Do you work with providers who hold both a home care and a 245D license?",
-        a: "Yes. That is a common structure and our current client holds both.",
+        a: "Yes. That is a common structure in Minnesota and the program we run covers both license types under one engagement.",
       },
       {
         q: "Can you handle an incident if one happens?",
@@ -160,7 +160,7 @@ export const solutions: Solution[] = [
       "Microsoft 365 administration, endpoint protection, and backup",
     ],
     proof:
-      "We build and maintain regulated security programs for Minnesota businesses, including serving as designated HIPAA Security Officer for a licensed healthcare provider and leading a full forensic incident investigation through to the legal breach determination.",
+      "Written Information Security Plans, designated Qualified Individual services, MFA and encryption evidence, vendor oversight, and workforce training built to the nine FTC Safeguards elements and IRS Publication 4557 for Minnesota tax and accounting firms.",
     faq: [
       {
         q: "I am a sole practitioner working from home. Does this apply?",
@@ -214,7 +214,7 @@ export const solutions: Solution[] = [
       "A remediation report you can attach to your submission",
     ],
     proof:
-      "We have run a live incident end to end for a Minnesota client: forensic evidence collection, structural verification of what executed on the device, network traffic analysis, coordination with legal counsel, and a 25-item corrective action plan.",
+      "Renewal-ready programs for Minnesota small businesses: MFA rollout with documented evidence, tested backup restores, a written incident response plan, endpoint protection, removal of standing administrator rights, and a named security lead for the carrier application.",
     faq: [
       {
         q: "How long before my renewal should we start?",
@@ -269,7 +269,7 @@ export const solutions: Solution[] = [
       "Optional: website, booking, and digital operations support",
     ],
     proof:
-      "We provide ongoing digital operations support to a Minnesota Type III student transportation operator, and we run security and compliance programs for regulated Minnesota clients including a licensed healthcare provider, where we led a full forensic incident investigation through to the legal breach determination.",
+      "Managed IT and data-handling programs built for Minnesota Type III and school bus contractors: Microsoft 365 and email security, driver-file and student-record handling reviewed against district contract terms, account lifecycle for drivers and office staff, endpoint protection, and a written incident response plan.",
     faq: [
       {
         q: "We are a small operator with a dozen drivers. Is this oversized for us?",
