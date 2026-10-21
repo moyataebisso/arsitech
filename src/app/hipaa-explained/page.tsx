@@ -23,11 +23,13 @@ export const metadata: Metadata = {
     "HIPAA for home healthcare",
     "HIPAA Minnesota",
   ],
+  alternates: { canonical: "/hipaa-explained" },
   openGraph: {
     title: "How HIPAA Compliance Actually Works (For Small Providers)",
     description:
       "Plain-English HIPAA guide for small Minnesota providers — what's required, what isn't, real penalty cases, and realistic probabilities.",
     type: "article",
+    url: "/hipaa-explained",
   },
 };
 

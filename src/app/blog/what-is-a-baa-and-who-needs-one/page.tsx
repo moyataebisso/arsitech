@@ -7,6 +7,12 @@ export const metadata: Metadata = {
     "What Is a Business Associate Agreement (BAA) and Who Needs One?",
   description:
     "A BAA is required whenever a healthcare provider shares ePHI with a vendor. Learn who needs one, what it must contain, and what happens if you skip it.",
+  alternates: {
+    canonical: "/blog/what-is-a-baa-and-who-needs-one",
+  },
+  openGraph: {
+    url: "/blog/what-is-a-baa-and-who-needs-one",
+  },
 };
 
 export default function WhatIsABaaPage() {

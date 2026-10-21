@@ -18,6 +18,8 @@ export const metadata: Metadata = {
   title: "Business IT and HIPAA Compliance for Minnesota",
   description:
     "Business IT (Microsoft 365, email, devices, backup, support) and HIPAA compliance (Security Officer, risk assessment, BAAs, staff training, incident response) for Minnesota businesses and healthcare providers.",
+  alternates: { canonical: "/services" },
+  openGraph: { url: "/services" },
 };
 
 type ServiceBlock = {

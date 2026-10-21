@@ -7,6 +7,12 @@ export const metadata: Metadata = {
     "Do Home Care Agencies in Minnesota Need a HIPAA Security Officer?",
   description:
     "Minnesota home care agencies are covered entities under HIPAA. Learn what a Security Officer does, who needs one, and the cost of outsourcing vs. hiring full-time.",
+  alternates: {
+    canonical: "/blog/hipaa-security-officer-home-care-minnesota",
+  },
+  openGraph: {
+    url: "/blog/hipaa-security-officer-home-care-minnesota",
+  },
 };
 
 export default function HipaaSecurityOfficerHomeCareMinnesotaPage() {

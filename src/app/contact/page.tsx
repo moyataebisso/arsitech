@@ -7,6 +7,8 @@ import { COMPANY, HIPAA_SERVICE_INTEREST } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Contact Us | Arsi Technology Group",
   description: "Get in touch with Arsi Technology Group. Schedule a free consultation for a Waji website, HIPAA compliance, or general IT support.",
+  alternates: { canonical: "/contact" },
+  openGraph: { url: "/contact" },
 };
 
 const expectations = [

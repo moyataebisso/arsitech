@@ -17,6 +17,8 @@ export const metadata: Metadata = {
   title: "Our Work | Arsi Technology Group",
   description:
     "See how we've helped Minnesota businesses build, secure, and scale their technology. View our client success stories and portfolio.",
+  alternates: { canonical: "/portfolio" },
+  openGraph: { url: "/portfolio" },
 };
 
 const CATEGORY_ICONS: Record<PortfolioCategory, typeof HeartIcon> = {

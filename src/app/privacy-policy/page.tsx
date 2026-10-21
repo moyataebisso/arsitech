@@ -4,6 +4,8 @@ import { COMPANY } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "Privacy Policy | Arsi Technology",
   description: "Privacy policy for Arsi Technology LLC. Learn how we collect, use, and protect your information.",
+  alternates: { canonical: "/privacy-policy" },
+  openGraph: { url: "/privacy-policy" },
 };
 
 export default function PrivacyPolicyPage() {

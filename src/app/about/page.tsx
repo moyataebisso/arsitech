@@ -8,6 +8,8 @@ export const metadata: Metadata = {
   title: "About | Arsi Technology Group — Tech that fits your size and your budget",
   description:
     "Making expensive tech services affordable for small businesses. Websites, business IT, and HIPAA compliance for Minnesota — Minneapolis-based, with HIPAA Healthcare as our flagship specialty.",
+  alternates: { canonical: "/about" },
+  openGraph: { url: "/about" },
 };
 
 const HOW_WE_WORK = [
