@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, DM_Sans } from "next/font/google";
+import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { PublicShell } from "@/components/PublicShell";
@@ -67,6 +68,11 @@ export default function RootLayout({
         <BorderLight />
         <ArsiJsonLd />
         <Analytics />
+        <Script
+          src="https://arsi-command-center.vercel.app/t.js"
+          data-key="7c8af755ed5f4fbbbc244859"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );
