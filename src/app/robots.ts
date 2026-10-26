@@ -6,7 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/arsi-admin", "/api"],
+        disallow: ["/admin", "/arsi-admin", "/api"],
       },
     ],
     sitemap: "https://www.arsitechgroup.com/sitemap.xml",

@@ -45,6 +45,12 @@ export const metadata: Metadata = {
     locale: "en_US",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "Arsi Technology Group LLC",
+    description:
+      "Websites, business IT, and HIPAA compliance for small businesses and healthcare providers in Minnesota.",
+  },
   robots: { index: true, follow: true },
 };
 
