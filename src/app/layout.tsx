@@ -4,6 +4,8 @@ import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 import { PublicShell } from "@/components/PublicShell";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import { BorderLight } from "@/components/BorderLight";
 import { ArsiJsonLd } from "@/components/ArsiJsonLd";
 
@@ -68,7 +70,7 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        <PublicShell>
+        <PublicShell nav={<Navigation />} footer={<Footer />}>
           {children}
         </PublicShell>
         <BorderLight />

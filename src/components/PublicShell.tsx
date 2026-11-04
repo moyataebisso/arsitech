@@ -1,9 +1,16 @@
 "use client";
+import type { ReactNode } from "react";
 import { usePathname } from "next/navigation";
-import Navigation from "@/components/Navigation";
-import Footer from "@/components/Footer";
 
-export function PublicShell({ children }: { children: React.ReactNode }) {
+export function PublicShell({
+  children,
+  nav,
+  footer,
+}: {
+  children: ReactNode;
+  nav: ReactNode;
+  footer: ReactNode;
+}) {
   const pathname = usePathname();
   const isAdmin = pathname.startsWith("/admin");
 
@@ -13,9 +20,9 @@ export function PublicShell({ children }: { children: React.ReactNode }) {
 
   return (
     <>
-      <Navigation />
+      {nav}
       <main id="main-content">{children}</main>
-      <Footer />
+      {footer}
     </>
   );
 }

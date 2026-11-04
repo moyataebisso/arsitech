@@ -1,12 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import { verifySessionValue, COOKIE_NAME } from "@/lib/admin-auth";
 
-export const runtime = "nodejs";
-
 const PUBLIC_PAGES = new Set<string>(["/admin/login"]);
 const PUBLIC_APIS = new Set<string>(["/api/admin/login", "/api/admin/logout"]);
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
   const isAdminPage =

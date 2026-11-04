@@ -2,7 +2,7 @@ import { createClient } from "@supabase/supabase-js";
 import { Resend } from "resend";
 import { escapeHtml } from "@/lib/form-guard";
 
-// Auth is enforced upstream by src/middleware.ts on /api/admin/:path*.
+// Auth is enforced upstream by src/proxy.ts on /api/admin/:path*.
 // If the request reaches this handler, the caller has a valid admin session.
 
 function getSupabaseAdmin() {

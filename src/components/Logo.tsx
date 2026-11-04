@@ -56,8 +56,8 @@ export default function Logo({ variant = "full", tone = "dark", className }: Log
         </span>
       )}
       {variant === "compact" && (
-        <span className="font-bold text-[26px] tracking-wide whitespace-nowrap leading-none">
-          ARSI
+        <span className="font-bold text-[15px] tracking-tight whitespace-nowrap leading-none">
+          Arsi Technology Group
         </span>
       )}
     </Link>

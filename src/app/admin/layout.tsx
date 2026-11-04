@@ -23,7 +23,7 @@ export default function AdminLayout({
   const router = useRouter();
 
   // The login page has its own centered layout — render it without the
-  // signed-in sidebar chrome. The middleware guarantees every other admin
+  // signed-in sidebar chrome. The proxy guarantees every other admin
   // path is authenticated, so no client-side gate is needed here.
   if (pathname === "/admin/login") return <>{children}</>;
 
