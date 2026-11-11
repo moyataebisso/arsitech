@@ -132,7 +132,7 @@ export default function WorkCarousel({ items = HOME_ITEMS }: Props) {
                   aria-roledescription="slide"
                   aria-label={item.name}
                 >
-                  <article className="h-full flex flex-col bg-white/10 backdrop-blur-sm rounded-2xl border border-white/10 overflow-hidden hover:border-accent/50 hover:shadow-xl hover:shadow-accent/10 transition-all duration-300">
+                  <article className="h-full flex flex-col bg-white/10 md:backdrop-blur-sm rounded-2xl border border-white/10 overflow-hidden hover:border-accent/50 hover:shadow-xl hover:shadow-accent/10 transition-all duration-300">
                     {item.image && (
                       <div className="relative w-full aspect-[16/10] bg-secondary">
                         <Image
@@ -153,7 +153,7 @@ export default function WorkCarousel({ items = HOME_ITEMS }: Props) {
                             src={item.logo}
                             alt={`${item.name} logo`}
                             fill
-                            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                            sizes="(min-width: 1024px) 320px, 240px"
                             className="object-contain"
                           />
                         </div>

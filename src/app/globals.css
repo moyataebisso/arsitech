@@ -461,6 +461,16 @@ html {
   inherits: false;
 }
 
+.border-light-layer {
+  display: none;
+}
+
+@media (min-width: 1024px) and (hover: hover) and (pointer: fine) {
+  .border-light-layer {
+    display: block;
+  }
+}
+
 .border-light-runner {
   position: absolute;
   inset: 0;
