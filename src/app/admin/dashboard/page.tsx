@@ -39,7 +39,7 @@ interface ChangeRequest {
 const SITES = [
   { name: "ArsiTech Group", url: "https://www.arsitechgroup.com", short: "arsitechgroup.com" },
   { name: "Cimaa Sites", url: "https://cimaasites.vercel.app", short: "cimaasites.vercel.app" },
-  { name: "CareConnect Live", url: "https://www.careconnectlive.org", short: "careconnectlive.org" },
+  { name: "CareConnect", url: "https://careconnections.live", short: "careconnections.live" },
   { name: "SaveYours", url: "https://www.saveyours.net", short: "saveyours.net" },
   { name: "Arsi Command Center", url: "https://arsi-command-center.vercel.app", short: "arsi-command-center.vercel.app" },
   { name: "Oromo Platform", url: "https://oromo-platform.vercel.app", short: "oromo-platform.vercel.app" },
